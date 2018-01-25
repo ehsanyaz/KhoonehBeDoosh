@@ -260,7 +260,7 @@ public class HomeActivity extends Activity {
         // Adding request to volley request queue
         strReq.setRetryPolicy(new DefaultRetryPolicy(5 * DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 0));
         strReq.setRetryPolicy(new DefaultRetryPolicy(0, 0, 0));
-        MyApplication.getInstance().addToRequestQueue(strReq, tag_string_req);
+        MA.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 
     private void showDialog() {
