@@ -33,6 +33,8 @@ public class CutomerActivity extends Activity {
             }
         });
 
-        typeface=Typeface.createFromAsset(getAssets(),"Fonts//");
+        typeface=Typeface.createFromAsset(getAssets(),"Fonts/font.ttf");
+        FilterMAp.setTypeface(typeface);
+        showMap.setTypeface(typeface);
     }
 }
