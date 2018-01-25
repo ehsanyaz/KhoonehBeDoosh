@@ -163,7 +163,7 @@ public class RegisterActivity extends Activity {
         };
 
         // Adding request to request queue
-        MyApplication.getInstance().addToRequestQueue(strReq, tag_string_req);
+        MA.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 
     private void showDialog() {
