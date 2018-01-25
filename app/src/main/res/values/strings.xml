@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">Khooneh Be Doosh</string>
     <string name="GeneralMap">نمایش محل های اسکان از روی نقشه</string>
     <string name="FilteringMap">جستجوی مکان مورد نظر</string>
+
+    <string name="app_name">Android Login</string>
+    <string name="hint_email">Email or User Name</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="logout">logout</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
 </resources>
