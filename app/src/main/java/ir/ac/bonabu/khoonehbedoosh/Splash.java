@@ -2,20 +2,16 @@ package ir.ac.bonabu.khoonehbedoosh;
 
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import ir.ac.bonabu.khoonehbedoosh.Server_Connection.SendUser;
 
 public class Splash extends Activity {
     Button signin;
-    FrameLayout signup_Layot;
+    LinearLayout signup_Layot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +22,7 @@ public class Splash extends Activity {
             @Override
             public void onClick(View view) {
                 signin.setVisibility(View.GONE);
-                signup_Layot = (FrameLayout) findViewById(R.id.sigin_lay);
+                signup_Layot = (LinearLayout) findViewById(R.id.sigin_lay);
                 signup_Layot.setVisibility(View.VISIBLE);
             }
         });
@@ -39,7 +35,7 @@ public class Splash extends Activity {
     @Override
     public void onBackPressed() {
         if (signup_Layot.getVisibility() == View.VISIBLE) {
-            signup_Layot.setVisibility(View.INVISIBLE);
+            signup_Layot.setVisibility(View.GONE);
             signin.setVisibility(View.VISIBLE);
 
         } else {
