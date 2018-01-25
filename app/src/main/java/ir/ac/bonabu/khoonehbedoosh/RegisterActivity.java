@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -35,7 +36,7 @@ public class RegisterActivity extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
 
     private Button btnRegister, btnLinkToLogin;
-    private TextInputLayout inputName, inputEmail, inputPassword;
+    private EditText inputName, inputEmail, inputPassword;
     private ProgressDialog pDialog;
 
     @Override
@@ -43,9 +44,9 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        inputName = (TextInputLayout) findViewById(R.id.rTextName);
-        inputEmail = (TextInputLayout) findViewById(R.id.rTextEmail);
-        inputPassword = (TextInputLayout) findViewById(R.id.rTextPassword);
+        inputName = (EditText) findViewById(R.id.rName);
+        inputEmail = (EditText) findViewById(R.id.rEditEmail);
+        inputPassword = (EditText) findViewById(R.id.rEditPassword);
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnLinkToLogin = (Button) findViewById(R.id.btnLinkToLoginScreen);
 
@@ -67,9 +68,9 @@ public class RegisterActivity extends Activity {
                 // Hide Keyboard
                 Functions.hideSoftKeyboard(RegisterActivity.this);
 
-                String name = inputName.getEditText().getText().toString().trim();
-                String email = inputEmail.getEditText().getText().toString().trim();
-                String password = inputPassword.getEditText().getText().toString().trim();
+                String name = inputName.getText().toString().trim();
+                String email = inputEmail.getText().toString().trim();
+                String password = inputPassword.getText().toString().trim();
 
                 // Check for empty data in the form
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {

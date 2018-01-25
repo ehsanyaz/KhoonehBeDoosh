@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import ir.ac.bonabu.khoonehbedoosh.helper.DatabaseHandler;
 import ir.ac.bonabu.khoonehbedoosh.helper.Functions;
@@ -40,7 +42,7 @@ import java.util.concurrent.TimeUnit;
 public class EmailVerify extends Activity {
     private static final String TAG = EmailVerify.class.getSimpleName();
 
-    private TextInputLayout textVerifyCode;
+    private EditText textVerifyCode;
     private Button btnVerify, btnResend;
     private TextView otpCountDown;
 
@@ -63,7 +65,7 @@ public class EmailVerify extends Activity {
         //activity_email_verify
         setContentView(R.layout.activity_email_verify);
 
-        textVerifyCode = (TextInputLayout) findViewById(R.id.verify_code);
+        textVerifyCode = (EditText) findViewById(R.id.verify_code);
         btnVerify = (Button) findViewById(R.id.btnVerify);
         btnResend = (Button) findViewById(R.id.btnResendCode);
         otpCountDown = (TextView) findViewById(R.id.otpCountDown);
@@ -90,10 +92,10 @@ public class EmailVerify extends Activity {
                 Functions.hideSoftKeyboard(EmailVerify.this);
 
                 String email = bundle.getString("email");
-                String otp = textVerifyCode.getEditText().getText().toString();
+                String otp = textVerifyCode.getText().toString();
                 if (!otp.isEmpty()) {
                     verifyCode(email, otp);
-                    textVerifyCode.setErrorEnabled(false);
+//                    textVerifyCode.setErrorEnabled(false);
                 } else {
                     textVerifyCode.setError("Please enter verification code");
                 }

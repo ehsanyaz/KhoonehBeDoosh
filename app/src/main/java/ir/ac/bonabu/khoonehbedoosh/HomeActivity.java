@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import ir.ac.bonabu.khoonehbedoosh.helper.DatabaseHandler;
 import ir.ac.bonabu.khoonehbedoosh.helper.Functions;
@@ -109,8 +111,8 @@ public class HomeActivity extends Activity {
                 dialogBuilder.setTitle("Change Password");
                 dialogBuilder.setCancelable(false);
 
-                final TextInputLayout oldPassword = (TextInputLayout) dialogView.findViewById(R.id.old_password);
-                final TextInputLayout newPassword = (TextInputLayout) dialogView.findViewById(R.id.new_password);
+                final EditText oldPassword = (EditText) dialogView.findViewById(R.id.old_password);
+                final EditText newPassword = (EditText) dialogView.findViewById(R.id.new_password);
 
                 dialogBuilder.setPositiveButton("Change",  new DialogInterface.OnClickListener() {
                     @Override
@@ -135,8 +137,8 @@ public class HomeActivity extends Activity {
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        if(oldPassword.getEditText().getText().length() > 0 &&
-                                newPassword.getEditText().getText().length() > 0){
+                        if(oldPassword.getText().length() > 0 &&
+                                newPassword.getText().length() > 0){
                             alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true);
                         } else {
                             alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
@@ -148,8 +150,8 @@ public class HomeActivity extends Activity {
                     }
                 };
 
-                oldPassword.getEditText().addTextChangedListener(textWatcher);
-                newPassword.getEditText().addTextChangedListener(textWatcher);
+                oldPassword.addTextChangedListener(textWatcher);
+                newPassword.addTextChangedListener(textWatcher);
 
                 alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                     @Override
@@ -161,8 +163,8 @@ public class HomeActivity extends Activity {
                             @Override
                             public void onClick(View view) {
                                 String email = user.get("email");
-                                String old_pass = oldPassword.getEditText().getText().toString();
-                                String new_pass = newPassword.getEditText().getText().toString();
+                                String old_pass = oldPassword.getText().toString();
+                                String new_pass = newPassword.getText().toString();
 
                                 if (!old_pass.isEmpty() && !new_pass.isEmpty()) {
                                     changePassword(email, old_pass, new_pass);

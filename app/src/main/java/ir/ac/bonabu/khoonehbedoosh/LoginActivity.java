@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,6 +27,8 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
 import ir.ac.bonabu.khoonehbedoosh.helper.DatabaseHandler;
 import ir.ac.bonabu.khoonehbedoosh.helper.Functions;
 import ir.ac.bonabu.khoonehbedoosh.helper.SessionManager;
@@ -47,7 +50,7 @@ public class LoginActivity extends Activity {
     private static String KEY_CREATED_AT = "created_at";
 
     private Button btnLogin, btnLinkToRegister, btnForgotPass;
-    private TextInputLayout inputEmail, inputPassword;
+    private EditText inputEmail, inputPassword;
     private ProgressDialog pDialog;
 
     private SessionManager session;
@@ -58,8 +61,8 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        inputEmail = (TextInputLayout) findViewById(R.id.lTextEmail);
-        inputPassword = (TextInputLayout) findViewById(R.id.lTextPassword);
+        inputEmail = (EditText) findViewById(R.id.lEditEmail);
+        inputPassword = (EditText) findViewById(R.id.lEditPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
         btnForgotPass = (Button) findViewById(R.id.btnForgotPassword);
@@ -94,8 +97,8 @@ public class LoginActivity extends Activity {
                 // Hide Keyboard
                 Functions.hideSoftKeyboard(LoginActivity.this);
 
-                String email = inputEmail.getEditText().getText().toString().trim();
-                String password = inputPassword.getEditText().getText().toString().trim();
+                String email = inputEmail.getText().toString().trim();
+                String password = inputPassword.getText().toString().trim();
 
                 // Check for empty data in the form
                 if (!email.isEmpty() && !password.isEmpty()) {
@@ -139,7 +142,7 @@ public class LoginActivity extends Activity {
         dialogBuilder.setTitle("Forgot Password");
         dialogBuilder.setCancelable(false);
 
-        final TextInputLayout mEditEmail = (TextInputLayout) dialogView.findViewById(R.id.editEmail);
+        final EditText mEditEmail = (EditText) dialogView.findViewById(R.id.editEmail);
 
         dialogBuilder.setPositiveButton("Reset",  new DialogInterface.OnClickListener() {
             @Override
@@ -157,14 +160,14 @@ public class LoginActivity extends Activity {
 
         final AlertDialog alertDialog = dialogBuilder.create();
 
-        mEditEmail.getEditText().addTextChangedListener(new TextWatcher() {
+        mEditEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(mEditEmail.getEditText().getText().length() > 0){
+                if(mEditEmail.getText().length() > 0){
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true);
                 } else {
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
@@ -185,7 +188,7 @@ public class LoginActivity extends Activity {
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String email = mEditEmail.getEditText().getText().toString();
+                        String email = mEditEmail.getText().toString();
 
                         if (!email.isEmpty()) {
                             if (Functions.isValidEmailAddress(email)) {
