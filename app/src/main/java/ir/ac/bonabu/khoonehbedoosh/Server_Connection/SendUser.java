@@ -2,16 +2,11 @@ package ir.ac.bonabu.khoonehbedoosh.Server_Connection;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -24,8 +19,6 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import ir.ac.bonabu.khoonehbedoosh.G;
-import ir.ac.bonabu.khoonehbedoosh.Splash;
 import ir.ac.bonabu.khoonehbedoosh.User;
 
 /**
@@ -45,6 +38,7 @@ public class SendUser {
     User user;
 
     public SendUser(Context context,User user ) {
+        this.context=context;
         this.user = user;
 
     }
@@ -59,22 +53,14 @@ public class SendUser {
 
                 super.onPreExecute();
 
-             //   progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
+               progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
             }
 
             @Override
             protected void onPostExecute(String string1) {
-
                 super.onPostExecute(string1);
-
-                // Dismiss the progress dialog after done uploading.
-            //    progressDialog.dismiss();
-
-                // Printing uploading success message coming from server on android app.
-                Toast.makeText(G.context, string1+"", Toast.LENGTH_LONG).show();
+               progressDialog.dismiss();
                 Log.w("Server","aa  "+string1);
-
-                // Setting image as transparent after done uploading.
 
 
             }
