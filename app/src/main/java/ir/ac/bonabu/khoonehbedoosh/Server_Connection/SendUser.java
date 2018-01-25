@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Base64;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 import ir.ac.bonabu.khoonehbedoosh.G;
+import ir.ac.bonabu.khoonehbedoosh.Splash;
+import ir.ac.bonabu.khoonehbedoosh.User;
 
 /**
  * Created by Abolfazl 7x on 1/25/2018.
@@ -31,52 +34,23 @@ import ir.ac.bonabu.khoonehbedoosh.G;
 
 public class SendUser {
 
-  Bitmap bitmap;
 
     boolean check = true;
     Context context;
 
-    ImageView imageView;
-
     ProgressDialog progressDialog;
 
-    String GetImageNameEditText;
 
-    String desc = "";
-    private String address = "";
+    String ServerUploadPath = "http://10.0.2.2/Php/kbd/test.php";
+    User user;
 
-    private String ImagePath = "img";
+    public SendUser(Context context,User user ) {
+        this.user = user;
 
-    String ServerUploadPath = "http://10.0.2.2/Php/Salamat/check.php";
-
-
-    public SendUser(Context context, Bitmap bm)
-
-    {
-        this.bitmap = bm;
-        this.context = context;
-    }
-
-    public void setDisc(String address) {
-        this.address = address;
-    }
-
-    public void setAddress(String desc) {
-        this.desc = desc;
     }
 
 
     public void ImageUploadToServerFunction() {
-
-        ByteArrayOutputStream byteArrayOutputStreamObject;
-
-        byteArrayOutputStreamObject = new ByteArrayOutputStream();
-
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStreamObject);
-
-        byte[] byteArrayVar = byteArrayOutputStreamObject.toByteArray();
-
-        final String ConvertImage = Base64.encodeToString(byteArrayVar, Base64.DEFAULT);
 
         class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
 
@@ -85,7 +59,7 @@ public class SendUser {
 
                 super.onPreExecute();
 
-                progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
+             //   progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
             }
 
             @Override
@@ -94,10 +68,11 @@ public class SendUser {
                 super.onPostExecute(string1);
 
                 // Dismiss the progress dialog after done uploading.
-                progressDialog.dismiss();
+            //    progressDialog.dismiss();
 
                 // Printing uploading success message coming from server on android app.
-                Toast.makeText(G.context, string1, Toast.LENGTH_LONG).show();
+                Toast.makeText(G.context, string1+"", Toast.LENGTH_LONG).show();
+                Log.w("Server","aa  "+string1);
 
                 // Setting image as transparent after done uploading.
 
@@ -111,12 +86,13 @@ public class SendUser {
                 SendUser.ImageProcessClass imageProcessClass = new SendUser.ImageProcessClass();
 
                 HashMap<String, String> HashMapParams = new HashMap<String, String>();
-
-                HashMapParams.put("desc", desc);
-
-                HashMapParams.put("address", address);
-
-                HashMapParams.put(ImagePath, ConvertImage);
+                HashMapParams.put("u[name]", user.getName());
+                HashMapParams.put("u[lastname]", user.getLastname());
+                HashMapParams.put("u[email]", user.getEmail());
+                HashMapParams.put("u[username]", user.getUsername());
+                HashMapParams.put("u[password]", user.getPassword());
+                HashMapParams.put("u[phone]", user.getPhone());
+                HashMapParams.put("u[nacode]", user.getNacode());
 
                 String FinalData = imageProcessClass.ImageHttpRequest(ServerUploadPath, HashMapParams);
 
