@@ -12,11 +12,11 @@ import com.android.volley.toolbox.Volley;
  * akshay@snowcorp.org
  * www.snowcorp.org
  */
-public class MyApplication extends Application {
-    public static final String TAG = MyApplication.class.getSimpleName();
+public class MA extends Application {
+    public static final String TAG = MA.class.getSimpleName();
     private RequestQueue mRequestQueue;
 
-    private static MyApplication mInstance;
+    private static MA mInstance;
 
     @Override
     public void onCreate() {
@@ -24,7 +24,7 @@ public class MyApplication extends Application {
         mInstance = this;
     }
 
-    public static synchronized MyApplication getInstance() {
+    public static synchronized MA getInstance() {
         return mInstance;
     }
 

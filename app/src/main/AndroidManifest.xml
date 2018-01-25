@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.ac.bonabu.khoonehbedoosh">
-
     <uses-permission
         android:name="android.permission.CAMERA"
         android:requiredFeature="true" />
@@ -28,7 +27,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +60,9 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
+        </activity>
+        <activity android:name=".FindPlace">
+
         </activity>
         <activity android:name=".ManageOwnerPlaces" />
         <activity android:name=".AddNewPlace"></activity>
