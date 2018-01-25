@@ -8,12 +8,15 @@ public class User {
     String name="";
     String lastname="";
     String username="";
-    String emaile="";
+    String email="";
     String password="";
     String phone="";
     String nacode="";
     String city="";
-    public User(){
+    public User(String name,String lastname,String username,String email,String password,String phone,String nacode){
+
+    }
+    public void userSingUp(){
 
     }
 }
