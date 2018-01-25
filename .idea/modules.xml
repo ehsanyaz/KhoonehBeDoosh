@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KhoonehBeDoosh.iml" filepath="$PROJECT_DIR$/KhoonehBeDoosh.iml" />
-      <module fileurl="file://D:\AndroidProjects\KhoonehBeDoosh\KhoonehBeDoosh.iml" filepath="D:\AndroidProjects\KhoonehBeDoosh\KhoonehBeDoosh.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\AndroidProjects\KhoonehBeDoosh\app\app.iml" filepath="D:\AndroidProjects\KhoonehBeDoosh\app\app.iml" />
     </modules>
   </component>
 </project>
