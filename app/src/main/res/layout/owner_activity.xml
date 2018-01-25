@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ir.ac.bonabu.khoonehbedoosh.OwenerActivity"
-    android:background="@color/baseColor">
+    android:background="@color/baseColor"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
 
 
     <Button
@@ -19,7 +22,7 @@
         android:textSize="30dp"/>
 
     <Button
-        android:id="@+id/customer_activity_MyPlaces_btn"
+        android:id="@+id/owner_activity_MyPlaces_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MyPlaces"
@@ -29,7 +32,7 @@
         android:textSize="30dp"/>
 
     <Button
-        android:id="@+id/customer_activity_MyAccount_btn"
+        android:id="@+id/owner_activity_MyAccount_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MyAccounts"
