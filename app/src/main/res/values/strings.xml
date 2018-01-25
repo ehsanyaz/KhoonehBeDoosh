@@ -1,6 +1,9 @@
 <resources>
     <string name="GeneralMap">نمایش محل های اسکان از روی نقشه</string>
     <string name="FilteringMap">جستجوی مکان مورد نظر</string>
+    <string name="MyPlaces">محل های اسکان من</string>
+    <string name="MyPassengers">مشتریان من</string>
+    <string name="MyAccounts">حساب های من</string>
 
     <string name="app_name">Android Login</string>
     <string name="hint_email">Email or User Name</string>
