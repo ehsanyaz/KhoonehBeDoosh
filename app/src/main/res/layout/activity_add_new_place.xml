@@ -49,47 +49,60 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right">
+                android:gravity="right"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:gravity="left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
                     android:orientation="vertical">
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content" />
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content" />
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content" />
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content" />
-
-                    <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:hint="نام مالک"/>
-
-                    <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:hint="هزینه هر شب اقامت"/>
 
                     <EditText
                         android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:hint="ظرفیت"/>
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext"/>
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext"/>
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext"/>
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/editext"/>
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:hint="نام مالک"
+                        android:background="@drawable/editext"/>
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:hint="هزینه هر شب اقامت"
+                        android:background="@drawable/editext"/>
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:hint="ظرفیت"
+                        android:background="@drawable/editext"/>
 
 
                     <EditText
                         android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:hint="متراژ"/>
+                        android:layout_height="50dp"
+                        android:hint="متراژ"
+                        android:background="@drawable/editext"
+                        />
 
                 </LinearLayout>
 
@@ -109,7 +122,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginTop="10dp"
                         android:text="عنوان:"
-                        android:textColor="#000000"/>
+                        android:textColor="#FFFFFF" />
 
 
                     <TextView
@@ -119,7 +132,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="25dp"
                         android:text="استان:"
-                        android:textColor="#000000"/>
+                        android:textColor="#FFFFFF" />
 
 
                     <TextView
@@ -127,9 +140,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="35dp"
                         android:text="شهر:"
-                        android:textColor="#000000"/>
+                        android:textColor="#FFFFFF" />
 
 
                     <TextView
@@ -137,41 +150,41 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="27dp"
+                        android:layout_marginTop="32dp"
                         android:text="آدرس:"
-                        android:textColor="#000000"/>
+                        android:textColor="#FFFFFF" />
 
                     <ImageView
+                        android:id="@+id/addNewPlace_img2"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="25dp"
-                        android:src="@drawable/account"
-                        />
+                        android:layout_marginTop="26dp"
+                        android:src="@drawable/account" />
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="17dp"
-                        android:src="@drawable/cash"
-                        />
-
-                    <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="19dp"
-                    android:src="@drawable/population"
-                    />
-
-                    <ImageView
+                        android:id="@+id/addNewPlace_img1"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="19dp"
-                        android:src="@drawable/size"
-                        />
+                        android:src="@drawable/cash" />
+
+                    <ImageView
+                        android:id="@+id/addNewPlace_img3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/population" />
+
+                    <ImageView
+                        android:id="@+id/addNewPlace_img4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/size" />
                 </LinearLayout>
 
             </LinearLayout>
