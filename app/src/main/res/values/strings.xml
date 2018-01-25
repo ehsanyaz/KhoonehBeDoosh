@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Khooneh Be Doosh</string>
+    <string name="GeneralMap">نمایش محل های اسکان از روی نقشه</string>
+    <string name="FilteringMap">جستجوی مکان مورد نظر</string>
 </resources>
