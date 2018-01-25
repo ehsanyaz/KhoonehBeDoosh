@@ -64,7 +64,7 @@
                 android:value=".LoginActivity" />
         </activity>
         <activity android:name=".ManageOwnerPlaces" />
-        <activity android:name=".AddNewPlace"></activity>
+        <activity android:name=".AddNewPlace" />
     </application>
 
 </manifest>
