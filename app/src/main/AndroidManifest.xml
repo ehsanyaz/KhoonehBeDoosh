@@ -30,7 +30,7 @@
         <activity android:name=".Splash">
 
         </activity>
-        <activity android:name=".CutomerActivity" />
+        <activity android:name=".CutomerActivity"></activity>
         <activity android:name=".OwenerActivity"></activity>
 
         <activity
