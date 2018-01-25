@@ -29,7 +29,7 @@ import ir.ac.bonabu.khoonehbedoosh.G;
  * Created by Abolfazl 7x on 1/25/2018.
  */
 
-public class Send {
+public class SendUser {
 
   Bitmap bitmap;
 
@@ -50,7 +50,7 @@ public class Send {
     String ServerUploadPath = "http://10.0.2.2/Php/Salamat/check.php";
 
 
-    public Send(Context context, Bitmap bm)
+    public SendUser(Context context, Bitmap bm)
 
     {
         this.bitmap = bm;
@@ -104,10 +104,11 @@ public class Send {
 
             }
 
+
             @Override
             protected String doInBackground(Void... params) {
 
-                Send.ImageProcessClass imageProcessClass = new Send.ImageProcessClass();
+                SendUser.ImageProcessClass imageProcessClass = new SendUser.ImageProcessClass();
 
                 HashMap<String, String> HashMapParams = new HashMap<String, String>();
 
