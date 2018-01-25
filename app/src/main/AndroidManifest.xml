@@ -28,7 +28,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,8 +62,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
+        <activity android:name=".FindPlace">
+
+        </activity>
         <activity android:name=".ManageOwnerPlaces" />
         <activity android:name=".AddNewPlace"></activity>
+        <activity android:name=".Map">
+
+        </activity>
+
+
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDoczErZQSiNhrtrTUrVlfkU2p1taWeQRQ">
+
+        </meta-data>
+
     </application>
 
 </manifest>
