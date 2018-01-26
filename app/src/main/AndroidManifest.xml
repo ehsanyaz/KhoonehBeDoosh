@@ -37,9 +37,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CutomerActivity" />
+        <activity android:name=".CutomerActivity" >
+
+        </activity>
         <activity android:name=".OwenerActivity" />
-        <activity android:name=".FindPlace">
+        <activity android:name=".FindPlace"
+            >
 
         </activity>
         <activity android:name=".ManageOwnerPlaces" />
