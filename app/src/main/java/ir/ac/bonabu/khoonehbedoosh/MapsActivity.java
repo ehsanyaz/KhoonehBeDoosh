@@ -43,6 +43,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
 
+    ArrayList<LatLng> listPoints;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sendRequest();
             }
         });
+
+        listPoints=new ArrayList<>();
     }
 
     private void sendRequest() {
@@ -88,9 +92,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         LatLng hcmus = new LatLng(35.692333, 51.393076);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 12));
-        originMarkers.add(mMap.addMarker(new MarkerOptions()
-                .title("Đại học Khoa học tự nhiên")
-                .position(hcmus)));
+//        originMarkers.add(mMap.addMarker(new MarkerOptions()
+//                .title("Đại học Khoa học tự nhiên")
+//                .position(hcmus)));
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -103,6 +107,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
         mMap.setMyLocationEnabled(true);
+//originMarkers.add(mMap.addMarker(new MarkerOptions()
+//                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))
+//                .title(route.startAddress)
+//                .position(route.startLocation)));
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                listPoints.add(latLng);
+
+                MarkerOptions markerOptions=new MarkerOptions();
+                markerOptions.position(latLng);
+
+                originMarkers.add(mMap.addMarker(new MarkerOptions().position(latLng)));
+
+//                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue));
+//
+//                mMap.addMarker(markerOptions);
+            }
+        });
+//        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+//            @Override
+//            public void onMapLongClick(LatLng latLng) {
+//                listPoints.add(latLng);
+//
+//                MarkerOptions markerOptions=new MarkerOptions();
+//                markerOptions.position(latLng);
+//
+//                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue));
+//
+//                mMap.addMarker(markerOptions);
+//            }
+//        });
     }
 
 
