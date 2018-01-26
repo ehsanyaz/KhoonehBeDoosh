@@ -1,5 +1,6 @@
 package ir.ac.bonabu.khoonehbedoosh.Server_Connection;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -76,8 +77,10 @@ public class ServerData {
                 if (cu == SIGN_UP || cu == SIGN_IN) {
                     if (result.contains("successful") && result.contains("user")) {
                         context.startActivity(new Intent(context, CutomerActivity.class));
+                        ((Activity)context).finish();
                     } else if (result.contains("successful") && result.contains("costumer")) {
                         context.startActivity(new Intent(context, OwenerActivity.class));
+                        ((Activity)context).finish();
                     } else {
                         AlertDialog.Builder msg = new AlertDialog.Builder(context)
                                 .setIcon(android.R.drawable.ic_delete)
