@@ -2,7 +2,9 @@ package ir.ac.bonabu.khoonehbedoosh;
 
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,10 +19,41 @@ public class Splash extends Activity {
     EditText signup_u, signup_p, signup_e, signup_n, signup_ln, signup_ph, signup_nc,signin_p,signin_u;
     LinearLayout signup_Layot,signin_Layot;
 
+    private static SharedPreferences preferences;
+
+    public static void putUserPass(String UserName,String Password,String Name,String familyName){
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("UserName",UserName);
+        editor.putString("Password",Password);
+        editor.putString("Name",Name);
+        editor.putString("FamilyName",familyName);
+        editor.commit();
+    }
+
+    public static String getFamilyName(){
+        return preferences.getString("FamilyName","");
+    }
+
+    public static String getName(){
+        return preferences.getString("Name","");
+    }
+
+    public static String getPassword(){
+        return preferences.getString("Password","");
+    }
+
+    public static String getUserName(){
+        return preferences.getString("UserName","");
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+
+        preferences= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
         signin_laybtn = (Button) findViewById(R.id.open_layout);
         signup_Layot = (LinearLayout) findViewById(R.id.sigup_lay);
         signin_Layot = (LinearLayout) findViewById(R.id.sigin_lay);
