@@ -34,6 +34,7 @@ public class ServerData {
 
     final int SIGN_IN = 0;
     final int SIGN_UP = 1;
+    final int LOCATION = 2;
     boolean check = true;
     Context context;
     ProgressDialog progressDialog;
@@ -41,6 +42,7 @@ public class ServerData {
     String ServerUploadPath = "http://530d2d83.ngrok.io/Php/kbd/test.php";
     User.signUp user;
     User.signIn signIn;
+    User.setLocation location;
 
     public ServerData(Context context, User.signUp user, int cu) {
         this.context = context;
@@ -241,25 +243,25 @@ public class ServerData {
     }
     public HashMap<String, String> mapdata() {
         HashMap<String, String> HashMapParams = new HashMap<String, String>();
-        HashMapParams.put("d[name]", signIn.getUsername());
-        HashMapParams.put("d[gps]", signIn.getPassword());
-        HashMapParams.put("d[state]", signIn.getPassword());
-        HashMapParams.put("d[bathroom]", signIn.getPassword());
-        HashMapParams.put("d[wc]", signIn.getPassword());
-        HashMapParams.put("d[poll]", signIn.getPassword());
-        HashMapParams.put("d[parking]", signIn.getPassword());
-        HashMapParams.put("d[mobl]", signIn.getPassword());
-        HashMapParams.put("d[kitchen]", signIn.getPassword());
-        HashMapParams.put("d[heater]", signIn.getPassword());
-        HashMapParams.put("d[aircon]", signIn.getPassword());
-        HashMapParams.put("d[tv]", signIn.getPassword());
-        HashMapParams.put("d[wifi]", signIn.getPassword());
-        HashMapParams.put("d[elevator]", signIn.getPassword());
-        HashMapParams.put("d[refrigriat]", signIn.getPassword());
-        HashMapParams.put("d[user_id]", signIn.getPassword());
+        HashMapParams.put("d[name]", location.getName());
+        HashMapParams.put("d[gps]", location.getGps());
+        HashMapParams.put("d[state]", location.getState());
+        HashMapParams.put("d[bathroom]", location.getBathroom());
+        HashMapParams.put("d[wc]", location.getWc());
+        HashMapParams.put("d[poll]", location.getPoll());
+        HashMapParams.put("d[parking]", location.getParking());
+        HashMapParams.put("d[mobl]", location.getMobl());
+        HashMapParams.put("d[kitchen]", location.getKitchen());
+        HashMapParams.put("d[heater]", location.getHeater());
+        HashMapParams.put("d[aircon]", location.getAircon());
+        HashMapParams.put("d[tv]", location.getTv());
+        HashMapParams.put("d[wifi]", location.getWifi());
+        HashMapParams.put("d[elevator]", location.getElevator());
+        HashMapParams.put("d[refrigriat]", location.getRefrigriat());
+        HashMapParams.put("d[user_id]", location.getUser_id());
         Log.e("server", signIn.getUsername());
         Log.e("server", signIn.getPassword());
-        HashMapParams.put("action", "0");
+        HashMapParams.put("action", "2");
         return HashMapParams;
     }
 }
