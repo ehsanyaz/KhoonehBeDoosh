@@ -183,6 +183,44 @@
                 android:hint="نام خانوادگی"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"/>
+
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/baseColor"
+                    android:text="نوع کاربر"
+                    android:textSize="16dp" />
+
+
+                <RadioButton
+                    android:id="@+id/splash_customer_radio"
+                    android:layout_width="match_parent"
+                    android:text="مشتری"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#2d2d2d" />
+
+                <RadioButton
+                    android:id="@+id/splash_owner_radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="صاحب ملک"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#2d2d2d" />
+
+
+            </RadioGroup>
+
             <Button
                 android:id="@+id/sigup"
                 android:layout_width="250dp"
