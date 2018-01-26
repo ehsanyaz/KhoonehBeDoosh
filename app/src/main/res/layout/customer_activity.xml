@@ -8,7 +8,9 @@
     tools:context="ir.ac.bonabu.khoonehbedoosh.CutomerActivity"
     android:layout_gravity="center"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/customer_layout"
+    tools:ignore="InvalidId">
 
     <Button
         android:id="@+id/customer_activity_findPlace_btn"

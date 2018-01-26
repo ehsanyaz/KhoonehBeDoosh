@@ -5,8 +5,12 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 public class CutomerActivity extends Activity {
 
@@ -36,5 +40,7 @@ public class CutomerActivity extends Activity {
         typeface=Typeface.createFromAsset(getAssets(),"Fonts/font.ttf");
         FilterMAp.setTypeface(typeface);
         showMap.setTypeface(typeface);
+
+        
     }
 }
