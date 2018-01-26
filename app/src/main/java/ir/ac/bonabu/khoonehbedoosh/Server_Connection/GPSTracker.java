@@ -1,6 +1,7 @@
 package ir.ac.bonabu.khoonehbedoosh.Server_Connection;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
@@ -21,7 +22,7 @@ import android.util.Log;
  * Created by Shaho on 1/26/2018.
  */
 
-public class GPSTracker extends Service implements LocationListener {
+public class GPSTracker extends Activity implements LocationListener {
     private Context mContext;
 
     // flag for GPS status
@@ -209,9 +210,4 @@ public class GPSTracker extends Service implements LocationListener {
         alertDialog.show();
     }
 
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
 }

@@ -15,11 +15,11 @@
         android:id="@+id/owner_activity_myPassengers_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/MyPassengers"
-        android:background="@drawable/buttonshape"
         android:layout_marginBottom="15dp"
+        android:background="@drawable/buttonshape"
         android:padding="7dp"
-        android:textSize="30dp"/>
+        android:text="@string/MyPassengers"
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/owner_activity_MyPlaces_btn"
