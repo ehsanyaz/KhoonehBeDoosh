@@ -237,7 +237,7 @@ public class ServerData {
         HashMapParams.put("u[username]", user.getUsername());
         HashMapParams.put("u[password]", user.getPassword());
         HashMapParams.put("u[phone]", user.getPhone());
-       // HashMapParams.put("u[nacode]", user.getNacode());
+        HashMapParams.put("u[usertype]", user.getType());
         HashMapParams.put("action", "1");
         return HashMapParams;
     }

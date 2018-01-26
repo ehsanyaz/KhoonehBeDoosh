@@ -15,6 +15,7 @@ public class User {
         String phone = "";
         String nacode = "";
         String city = "";
+        String user_type="";
 
         public String getName() {
             return name;
@@ -47,8 +48,9 @@ public class User {
         public String getCity() {
             return city;
         }
+        public String getType(){return user_type;}
 
-        public signUp(String name, String lastname, String username, String email, String password, String phone) {
+        public signUp(String name, String lastname, String username, String email, String password, String phone,String user_type) {
             this.name = name;
             this.lastname = lastname;
             this.username = username;
@@ -56,6 +58,7 @@ public class User {
             this.password = password;
             this.phone = phone;
             this.nacode = nacode;
+            this.user_type=user_type;
         }
     }
 
