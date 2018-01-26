@@ -1,197 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/baseColor"
-    tools:context="ir.ac.bonabu.khoonehbedoosh.AddNewPlace">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/add_place_addPic_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/addpicture" />
-
-                <ImageView
-                    android:id="@+id/add_place_addLocation_img"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:src="@drawable/locatio" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:orientation="horizontal">
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#ffffe0"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                app:contentPadding="8dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/editext"/>
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/editext"/>
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/editext"/>
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/editext"/>
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:hint="نام مالک"
-                        android:background="@drawable/editext"/>
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:hint="هزینه هر شب اقامت"
-                        android:background="@drawable/editext"/>
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:hint="ظرفیت"
-                        android:background="@drawable/editext"/>
-
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:hint="متراژ"
-                        android:background="@drawable/editext"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginTop="10dp"
-                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/FindPlace_city_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5" />
+
+                    <EditText
+                        android:id="@+id/FindPlace_state_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#ffffe0"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                app:contentPadding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="عنوان:"
-                        android:textColor="#FFFFFF" />
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/FindPlace_price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_margin="15dp"
+                            android:textSize="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <SeekBar
+                            android:id="@+id/FindPlace_price_seekBar"
+                            style="@style/Widget.AppCompat.SeekBar.Discrete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="25dp"
-                        android:text="استان:"
-                        android:textColor="#FFFFFF" />
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/FindPlace_roomCount_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_margin="15dp"
+                            android:textSize="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <SeekBar
+                            android:id="@+id/FindPlace_roomCount_Seek"
+                            style="@style/Widget.AppCompat.SeekBar.Discrete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="35dp"
-                        android:text="شهر:"
-                        android:textColor="#FFFFFF" />
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/FindPlace_metraj_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_margin="15dp"
+                            android:textSize="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="32dp"
-                        android:text="آدرس:"
-                        android:textColor="#FFFFFF" />
+                        <SeekBar
+                            android:id="@+id/FindPlace_metraj_seekbar"
+                            style="@style/Widget.AppCompat.SeekBar.Discrete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
 
-                    <ImageView
-                        android:id="@+id/addNewPlace_img2"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="26dp"
-                        android:src="@drawable/account" />
-
-                    <ImageView
-                        android:id="@+id/addNewPlace_img1"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="19dp"
-                        android:src="@drawable/cash" />
-
-                    <ImageView
-                        android:id="@+id/addNewPlace_img3"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/population" />
-
-                    <ImageView
-                        android:id="@+id/addNewPlace_img4"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/size" />
+                    </LinearLayout>
                 </LinearLayout>
+            </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#ffffe0"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                app:contentPadding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/FindPlace_placeType_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/baseColor"
+                            android:textSize="16dp" />
+
+
+                        <RadioButton
+                            android:id="@+id/FindPlace_usuaul_radio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#2d2d2d" />
+
+                        <RadioButton
+                            android:id="@+id/FindPlace_natrual_radio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#2d2d2d" />
+
+
+                        <RadioButton
+                            android:id="@+id/FindPlace_apartment_radio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#2d2d2d" />
+
+                        <RadioButton
+                            android:id="@+id/FindPlace_villa_radio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#2d2d2d" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/FindPlace_furnitur_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#ffffe0"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                app:contentPadding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/findPlace_bathroom_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.2" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_toilet_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.2" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_parking_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.2" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_mobl_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.2" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/findPlace_tv_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_aircon_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_heater_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_kitchen_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/findPlace_refregirator_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_wifi_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_eleverator_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+                        <ImageView
+                            android:id="@+id/findPlace_pool_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:layout_weight="0.25" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/FindPlace_search_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp" />
         </LinearLayout>
-
-
     </ScrollView>
-
 </LinearLayout>

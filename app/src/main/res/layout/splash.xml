@@ -59,7 +59,8 @@
                 android:height="0dp"
                 android:hint="نام کاربری"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
 
 
             <EditText
@@ -70,7 +71,8 @@
                 android:layout_weight=".2"
                 android:hint="گذر واژه"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
             <Button
                 android:id="@+id/sigin"
                 android:layout_width="250dp"
@@ -98,7 +100,7 @@
     <LinearLayout
         android:id="@+id/sigup_lay"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="600dp"
         android:layout_marginBottom="0dp"
         android:layout_weight="0.1"
         android:background="#ffffff"
@@ -130,7 +132,8 @@
             android:height="0dp"
             android:hint="نام کاربری"
             android:background="@drawable/editext"
-            android:paddingRight="10dp"/>
+            android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
             <EditText
                 android:id="@+id/signup_e"
                 android:layout_width="match_parent"
@@ -140,7 +143,8 @@
                 android:height="0dp"
                 android:hint="ایمیل"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
 
             <EditText
                 android:id="@+id/signup_p"
@@ -151,7 +155,8 @@
                 android:height="0dp"
                 android:hint="گذر واژه"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
             <EditText
                 android:id="@+id/signup_ph"
                 android:layout_width="match_parent"
@@ -160,8 +165,10 @@
                 android:layout_weight=".2"
                 android:height="0dp"
                 android:hint="شماره تلفن"
+                android:inputType="number"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
             <EditText
                 android:id="@+id/signup_n"
                 android:layout_width="match_parent"
@@ -171,7 +178,8 @@
                 android:height="0dp"
                 android:hint="نام"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
 
 
             <EditText
@@ -182,7 +190,8 @@
                 android:layout_weight=".2"
                 android:hint="نام خانوادگی"
                 android:background="@drawable/editext"
-                android:paddingRight="10dp"/>
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
 
 
             <RadioGroup

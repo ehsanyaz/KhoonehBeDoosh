@@ -76,21 +76,20 @@ public class AddNewPlace extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newof_ind_place);
+        setContentView(R.layout.activity_add_new_place);
         if (getIntent() != null)
             getIntent().getExtras().getString("gps");
         readyGraphics();
         setImageViewSettings();
 
         search = (Button) findViewById(R.id.FindPlace_search_btn);
-        search.setText("جستجو");
+        search.setText("تایید");
         search.setBackgroundColor(Color.WHITE);
         search.setTypeface(typeface);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_LONG).show();
-                //TODO:Complete Search operation
+              //  User.setLocation loc=new User.setLocation(state.getText().toString(),gps,"0",bathroom+"",)
             }
         });
     }

@@ -80,11 +80,11 @@ public class ServerData {
                progressDialog.dismiss();
                 Log.w("Server", result);
                 if (cu == SIGN_UP || cu == SIGN_IN) {
-                    if (result.contains("successful") && result.contains("user")) {
+                    if (result.contains("successful") && result.contains("costumer")) {
                         malek=true;
                         context.startActivity(new Intent(context, MapsActivity.class));
                         ((Activity)context).finish();
-                    } else if (result.contains("successful") && result.contains("costumer")) {
+                    } else if (result.contains("successful") && result.contains("owner")) {
                         context.startActivity(new Intent(context, OwenerActivity.class));
                         ((Activity)context).finish();
                     } else {
@@ -105,7 +105,7 @@ public class ServerData {
                         }
                         msg.create().show();
                     }
-                } else {
+                } else if(cu==LOCATION){
 
                 }
                 // Log.w("Server", result);
