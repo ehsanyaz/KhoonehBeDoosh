@@ -137,6 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             ArrayList<LatLng> latLngs=new ArrayList<>();
             LatLng hcmus1 = new LatLng(35.692333, 51.393076);
+          //  hcmus1.latitude
             latLngs.add(hcmus1);
             LatLng hcmus2 = new LatLng(35.0, 50.0);
             latLngs.add(hcmus2);
