@@ -316,7 +316,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onInfoWindowClick(Marker marker) {
         if(CutomerActivity.malek)
         {
-            Toast.makeText(this, "next activity malek",Toast.LENGTH_SHORT).show();
+            String data=array2String(listPoints);
+            Intent intent =new Intent(MapsActivity.this,AddNewPlace.class);
+            intent.putExtra("gps",data);
+            startActivity(intent);
         }
         else
         {
@@ -332,5 +335,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        marker.showInfoWindow();
 //
         return false;
+    }
+    public static String array2String(ArrayList<LatLng> A) {
+        String r = "";
+        for (int i = 0; i < A.size(); i++) {
+            r += A.get(i) + "";
+        }
+        return r;
     }
 }

@@ -63,7 +63,6 @@ public class Splash extends Activity {
         signup_ln=(EditText)findViewById(R.id.signup_ln);
         signup_e=(EditText)findViewById(R.id.signup_e);
         signup_ph=(EditText)findViewById(R.id.signup_ph);
-        signup_nc=(EditText)findViewById(R.id.signup_nc);
         signin_u=(EditText)findViewById(R.id.signin_u);
         signin_p=(EditText)findViewById(R.id.signin_p);
         signin_laybtn.setOnClickListener(new View.OnClickListener() {

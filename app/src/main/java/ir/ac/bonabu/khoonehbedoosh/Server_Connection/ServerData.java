@@ -241,8 +241,22 @@ public class ServerData {
     }
     public HashMap<String, String> mapdata() {
         HashMap<String, String> HashMapParams = new HashMap<String, String>();
-        HashMapParams.put("u[username]", signIn.getUsername());
-        HashMapParams.put("u[password]", signIn.getPassword());
+        HashMapParams.put("d[name]", signIn.getUsername());
+        HashMapParams.put("d[gps]", signIn.getPassword());
+        HashMapParams.put("d[state]", signIn.getPassword());
+        HashMapParams.put("d[bathroom]", signIn.getPassword());
+        HashMapParams.put("d[wc]", signIn.getPassword());
+        HashMapParams.put("d[poll]", signIn.getPassword());
+        HashMapParams.put("d[parking]", signIn.getPassword());
+        HashMapParams.put("d[mobl]", signIn.getPassword());
+        HashMapParams.put("d[kitchen]", signIn.getPassword());
+        HashMapParams.put("d[heater]", signIn.getPassword());
+        HashMapParams.put("d[aircon]", signIn.getPassword());
+        HashMapParams.put("d[tv]", signIn.getPassword());
+        HashMapParams.put("d[wifi]", signIn.getPassword());
+        HashMapParams.put("d[elevator]", signIn.getPassword());
+        HashMapParams.put("d[refrigriat]", signIn.getPassword());
+        HashMapParams.put("d[user_id]", signIn.getPassword());
         Log.e("server", signIn.getUsername());
         Log.e("server", signIn.getPassword());
         HashMapParams.put("action", "0");
