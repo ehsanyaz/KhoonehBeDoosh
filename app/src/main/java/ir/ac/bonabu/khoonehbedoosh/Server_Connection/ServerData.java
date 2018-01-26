@@ -239,7 +239,7 @@ public class ServerData {
         HashMapParams.put("action", "0");
         return HashMapParams;
     }
-    public HashMap<String, String> () {
+    public HashMap<String, String> mapdata() {
         HashMap<String, String> HashMapParams = new HashMap<String, String>();
         HashMapParams.put("u[username]", signIn.getUsername());
         HashMapParams.put("u[password]", signIn.getPassword());

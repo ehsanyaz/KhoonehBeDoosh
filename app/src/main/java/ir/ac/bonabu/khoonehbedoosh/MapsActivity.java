@@ -2,6 +2,7 @@ package ir.ac.bonabu.khoonehbedoosh;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -312,7 +313,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Toast.makeText(this, "next activity",Toast.LENGTH_SHORT).show();
+        Intent intent =new Intent(MapsActivity.this,)
     }
 
     @Override
