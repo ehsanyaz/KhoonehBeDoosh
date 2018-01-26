@@ -138,8 +138,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ArrayList<LatLng> latLngs=new ArrayList<>();
             LatLng hcmus1 = new LatLng(35.692333, 51.393076);
             latLngs.add(hcmus1);
-            LatLng hcmus2 = new LatLng(40.692333, 56.393076);
+            LatLng hcmus2 = new LatLng(35.0, 50.0);
             latLngs.add(hcmus2);
+            LatLng hcmus3 = new LatLng(34.5, 49.0);
+            latLngs.add(hcmus3);
+            LatLng hcmus4 = new LatLng(37.0, 40.0);
+            latLngs.add(hcmus4);
             drowLocation(latLngs);
 
         }
