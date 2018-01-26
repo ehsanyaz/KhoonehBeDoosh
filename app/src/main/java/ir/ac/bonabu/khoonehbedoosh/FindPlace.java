@@ -15,18 +15,18 @@ import android.widget.Toast;
 
 public class FindPlace extends Activity {
 
-    private boolean haveMobl = false;
-    private boolean haveRefreg = false;
-    private boolean haveParking = false;
-    private boolean haveToilet = false;
-    private boolean havebathroom = false;
-    private boolean haveKitchen = false;
-    private boolean haveCooler = false;
-    private boolean haveHeater = false;
-    private boolean haveTV = false;
-    private boolean haveWIFI = false;
-    private boolean haveEleveretor = false;
-    private boolean havePool = false;
+    private int haveMobl = 0;
+    private int haveRefreg = 0;
+    private int haveParking = 0;
+    private int haveToilet = 0;
+    private int havebathroom = 0;
+    private int haveKitchen = 0;
+    private int haveCooler = 0;
+    private int haveHeater = 0;
+    private int haveTV = 0;
+    private int haveWIFI = 0;
+    private int haveEleveretor = 0;
+    private int havePool = 0;
 
     private ImageView mobl;
     private ImageView refregirator;
@@ -207,11 +207,11 @@ public class FindPlace extends Activity {
         bathroom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (havebathroom) {
-                    havebathroom = false;
+                if (havebathroom==1) {
+                    havebathroom = 0;
                     bathroom.setColorFilter(Color.GRAY);
                 } else {
-                    havebathroom = true;
+                    havebathroom = 1;
                     bathroom.setColorFilter(Color.BLACK);
                 }
             }
@@ -223,11 +223,11 @@ public class FindPlace extends Activity {
         mobl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveMobl) {
-                    haveMobl = false;
+                if (haveMobl==1) {
+                    haveMobl = 0;
                     mobl.setColorFilter(Color.GRAY);
                 } else {
-                    haveMobl = true;
+                    haveMobl = 1;
                     mobl.setColorFilter(Color.BLACK);
                 }
             }
@@ -239,11 +239,11 @@ public class FindPlace extends Activity {
         refregirator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveRefreg) {
-                    haveRefreg = false;
+                if (haveRefreg==1) {
+                    haveRefreg = 0;
                     refregirator.setColorFilter(Color.GRAY);
                 } else {
-                    haveRefreg = true;
+                    haveRefreg = 1;
                     refregirator.setColorFilter(Color.BLACK);
                 }
             }
@@ -255,11 +255,11 @@ public class FindPlace extends Activity {
         parking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveParking) {
-                    haveParking = false;
+                if (haveParking==1) {
+                    haveParking = 0;
                     parking.setColorFilter(Color.GRAY);
                 } else {
-                    haveParking = true;
+                    haveParking = 1;
                     parking.setColorFilter(Color.BLACK);
                 }
             }
@@ -271,11 +271,11 @@ public class FindPlace extends Activity {
         toilet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveToilet) {
-                    haveToilet = false;
+                if (haveToilet==1) {
+                    haveToilet = 0;
                     toilet.setColorFilter(Color.GRAY);
                 } else {
-                    haveToilet = true;
+                    haveToilet = 1;
                     toilet.setColorFilter(Color.BLACK);
                 }
             }
@@ -288,11 +288,11 @@ public class FindPlace extends Activity {
         kitchen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveKitchen) {
-                    haveKitchen = false;
+                if (haveKitchen==1) {
+                    haveKitchen = 0;
                     kitchen.setColorFilter(Color.GRAY);
                 } else {
-                    haveKitchen = true;
+                    haveKitchen = 1;
                     kitchen.setColorFilter(Color.BLACK);
                 }
             }
@@ -304,11 +304,11 @@ public class FindPlace extends Activity {
         cooler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveCooler) {
-                    haveCooler = false;
+                if (haveCooler==1) {
+                    haveCooler = 0;
                     cooler.setColorFilter(Color.GRAY);
                 } else {
-                    haveCooler = true;
+                    haveCooler = 1;
                     cooler.setColorFilter(Color.BLACK);
                 }
             }
@@ -320,11 +320,11 @@ public class FindPlace extends Activity {
         heater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveHeater) {
-                    haveHeater = false;
+                if (haveHeater==1) {
+                    haveHeater = 0;
                     heater.setColorFilter(Color.GRAY);
                 } else {
-                    haveHeater = true;
+                    haveHeater = 1;
                     heater.setColorFilter(Color.BLACK);
                 }
             }
@@ -336,11 +336,11 @@ public class FindPlace extends Activity {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveTV) {
-                    haveTV = false;
+                if (haveTV==1) {
+                    haveTV = 0;
                     tv.setColorFilter(Color.GRAY);
                 } else {
-                    haveTV = true;
+                    haveTV = 1;
                     tv.setColorFilter(Color.BLACK);
                 }
             }
@@ -352,11 +352,11 @@ public class FindPlace extends Activity {
         wifi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveWIFI) {
-                    haveWIFI = false;
+                if (haveWIFI==1) {
+                    haveWIFI = 0;
                     wifi.setColorFilter(Color.GRAY);
                 } else {
-                    haveWIFI = true;
+                    haveWIFI = 1;
                     wifi.setColorFilter(Color.BLACK);
                 }
             }
@@ -368,11 +368,11 @@ public class FindPlace extends Activity {
         elevertor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (haveEleveretor) {
-                    haveEleveretor = false;
+                if (haveEleveretor==1) {
+                    haveEleveretor = 0;
                     elevertor.setColorFilter(Color.GRAY);
                 } else {
-                    haveEleveretor = true;
+                    haveEleveretor = 1;
                     elevertor.setColorFilter(Color.BLACK);
                 }
             }
@@ -384,11 +384,11 @@ public class FindPlace extends Activity {
         pool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (havePool) {
-                    havePool = false;
+                if (havePool==1) {
+                    havePool = 0;
                     pool.setColorFilter(Color.GRAY);
                 } else {
-                    havePool = true;
+                    havePool = 1;
                     pool.setColorFilter(Color.BLACK);
                 }
             }
