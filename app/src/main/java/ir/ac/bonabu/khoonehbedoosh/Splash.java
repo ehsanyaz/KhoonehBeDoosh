@@ -5,10 +5,12 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 
 import ir.ac.bonabu.khoonehbedoosh.Server_Connection.ServerData;
 
@@ -18,6 +20,8 @@ public class Splash extends Activity {
     Button signin_laybtn;
     EditText signup_u, signup_p, signup_e, signup_n, signup_ln, signup_ph, signup_nc,signin_p,signin_u;
     LinearLayout signup_Layot,signin_Layot;
+    RadioButton ow,cus;
+    String usertype="0";
 
     private static SharedPreferences preferences;
 
@@ -65,6 +69,15 @@ public class Splash extends Activity {
         signup_ph=(EditText)findViewById(R.id.signup_ph);
         signin_u=(EditText)findViewById(R.id.signin_u);
         signin_p=(EditText)findViewById(R.id.signin_p);
+        cus=(RadioButton)findViewById(R.id.splash_customer_radio);
+        ow=(RadioButton)findViewById(R.id.splash_owner_radio);
+
+
+
+        if(ow.isSelected()){
+            usertype="1";
+        }
+
         signin_laybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +103,8 @@ public class Splash extends Activity {
         findViewById(R.id.sigup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User.signUp user = new User.signUp(signup_n.getText().toString(), signup_ln.getText().toString(), signup_u.getText().toString(), signup_e.getText().toString(), signup_p.getText().toString(), signup_ph.getText().toString());
+                Log.e("Server",usertype);
+                User.signUp user = new User.signUp(signup_n.getText().toString(), signup_ln.getText().toString(), signup_u.getText().toString(), signup_e.getText().toString(), signup_p.getText().toString(), signup_ph.getText().toString(),usertype);
                 ServerData sendUser = new ServerData(Splash.this, user,SIGN_UP);
                 sendUser.upload();
             }
@@ -112,7 +126,7 @@ public class Splash extends Activity {
             signin_Layot.setVisibility(View.GONE);
             signin_laybtn.setVisibility(View.VISIBLE);
 
-        } else {
+        } else  {
             super.onBackPressed();
         }
     }
