@@ -57,6 +57,8 @@ public class FindPlace extends Activity {
         txt1.setTypeface(typeface);
 
         search=(Button)findViewById(R.id.FindPlace_search_btn);
+        search.setText("جستجو");
+        search.setBackgroundColor(Color.WHITE);
         search.setTypeface(typeface);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +71,24 @@ public class FindPlace extends Activity {
 
     private void setImageViewSettings() {
 
+        bathroom=(ImageView)findViewById(R.id.findPlace_bathroom_img);
+        bathroom.setImageResource(R.drawable.bathroom);
+        bathroom.setColorFilter(Color.GRAY);
+        bathroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(havebathroom){
+                    havebathroom=false;
+                    bathroom.setColorFilter(Color.GRAY);
+                }else{
+                    havebathroom=true;
+                    bathroom.setColorFilter(Color.BLACK);
+                }
+            }
+        });
+
         mobl=(ImageView)findViewById(R.id.findPlace_mobl_img);
+        mobl.setImageResource(R.drawable.mobl);
         mobl.setColorFilter(Color.GRAY);
         mobl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +104,7 @@ public class FindPlace extends Activity {
         });
 
         refregirator=(ImageView)findViewById(R.id.findPlace_refregirator_img);
+        refregirator.setImageResource(R.drawable.refrigertor);
         refregirator.setColorFilter(Color.GRAY);
         refregirator.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +120,7 @@ public class FindPlace extends Activity {
         });
 
         parking=(ImageView)findViewById(R.id.findPlace_parking_img);
+        parking.setImageResource(R.drawable.parking);
         parking.setColorFilter(Color.GRAY);
         parking.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +136,7 @@ public class FindPlace extends Activity {
         });
 
         toilet=(ImageView)findViewById(R.id.findPlace_toilet_img);
+        toilet.setImageResource(R.drawable.toilet);
         toilet.setColorFilter(Color.GRAY);
         toilet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,22 +151,10 @@ public class FindPlace extends Activity {
             }
         });
 
-        bathroom=(ImageView)findViewById(R.id.findPlace_bathroom_img);
-        bathroom.setColorFilter(Color.GRAY);
-        bathroom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(havebathroom){
-                    havebathroom=false;
-                    bathroom.setColorFilter(Color.GRAY);
-                }else{
-                    havebathroom=true;
-                    bathroom.setColorFilter(Color.BLACK);
-                }
-            }
-        });
+
 
         kitchen=(ImageView)findViewById(R.id.findPlace_kitchen_img);
+        kitchen.setImageResource(R.drawable.kitchen);
         kitchen.setColorFilter(Color.GRAY);
         kitchen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,6 +170,7 @@ public class FindPlace extends Activity {
         });
 
         cooler=(ImageView)findViewById(R.id.findPlace_aircon_img);
+        cooler.setImageResource(R.drawable.aircon);
         cooler.setColorFilter(Color.GRAY);
         cooler.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,6 +186,7 @@ public class FindPlace extends Activity {
         });
 
         heater=(ImageView)findViewById(R.id.findPlace_heater_img);
+        heater.setImageResource(R.drawable.heater);
         heater.setColorFilter(Color.GRAY);
         heater.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,6 +202,7 @@ public class FindPlace extends Activity {
         });
 
         tv=(ImageView)findViewById(R.id.findPlace_tv_img);
+        tv.setImageResource(R.drawable.tv);
         tv.setColorFilter(Color.GRAY);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,6 +218,7 @@ public class FindPlace extends Activity {
         });
 
         wifi=(ImageView)findViewById(R.id.findPlace_wifi_img);
+        wifi.setImageResource(R.drawable.wifi);
         wifi.setColorFilter(Color.GRAY);
         wifi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -220,6 +234,7 @@ public class FindPlace extends Activity {
         });
 
         elevertor=(ImageView)findViewById(R.id.findPlace_eleverator_img);
+        elevertor.setImageResource(R.drawable.eleveator);
         elevertor.setColorFilter(Color.GRAY);
         elevertor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,6 +250,7 @@ public class FindPlace extends Activity {
         });
 
         pool=(ImageView)findViewById(R.id.findPlace_pool_img);
+        pool.setImageResource(R.drawable.pool);
         pool.setColorFilter(Color.GRAY);
         pool.setOnClickListener(new View.OnClickListener() {
             @Override

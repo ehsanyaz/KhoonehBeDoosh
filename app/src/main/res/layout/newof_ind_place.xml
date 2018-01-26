@@ -191,7 +191,7 @@
             </LinearLayout>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 app:cardBackgroundColor="#ffffe0"
@@ -215,32 +215,28 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.2"
-                            android:src="@drawable/bathroom" />
+                            android:layout_weight="0.2" />
 
                         <ImageView
                             android:id="@+id/findPlace_toilet_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.2"
-                            android:src="@drawable/toilet" />
+                            android:layout_weight="0.2" />
 
                         <ImageView
                             android:id="@+id/findPlace_parking_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.2"
-                            android:src="@drawable/parking" />
+                            android:layout_weight="0.2" />
 
                         <ImageView
                             android:id="@+id/findPlace_mobl_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.2"
-                            android:src="@drawable/mobl" />
+                            android:layout_weight="0.2" />
 
 
                     </LinearLayout>
@@ -257,32 +253,28 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/tv" />
+                            android:layout_weight="0.25" />
 
                         <ImageView
                             android:id="@+id/findPlace_aircon_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/aircon" />
+                            android:layout_weight="0.25" />
 
                         <ImageView
                             android:id="@+id/findPlace_heater_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/heater" />
+                            android:layout_weight="0.25" />
 
                         <ImageView
                             android:id="@+id/findPlace_kitchen_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/kitchen" />
+                            android:layout_weight="0.25" />
 
 
                     </LinearLayout>
@@ -300,32 +292,28 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/refrigertor" />
+                            android:layout_weight="0.25" />
 
                         <ImageView
                             android:id="@+id/findPlace_wifi_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/wifi" />
+                            android:layout_weight="0.25" />
 
                         <ImageView
                             android:id="@+id/findPlace_eleverator_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/eleveator" />
+                            android:layout_weight="0.25" />
 
                         <ImageView
                             android:id="@+id/findPlace_pool_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="0.25"
-                            android:src="@drawable/pool" />
+                            android:layout_weight="0.25" />
 
 
                     </LinearLayout>
@@ -336,9 +324,8 @@
                 android:id="@+id/FindPlace_search_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
                 android:padding="15dp"
-                android:text="جستجو" />
+                />
 
         </LinearLayout>
     </ScrollView>
