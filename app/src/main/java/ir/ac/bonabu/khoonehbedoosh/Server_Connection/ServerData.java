@@ -24,6 +24,7 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 import ir.ac.bonabu.khoonehbedoosh.CutomerActivity;
+import ir.ac.bonabu.khoonehbedoosh.MapsActivity;
 import ir.ac.bonabu.khoonehbedoosh.OwenerActivity;
 import ir.ac.bonabu.khoonehbedoosh.User;
 
@@ -32,6 +33,8 @@ import ir.ac.bonabu.khoonehbedoosh.User;
  */
 
 public class ServerData {
+
+    public static boolean malek=true;
 
     final int SIGN_IN = 0;
     final int SIGN_UP = 1;
@@ -76,7 +79,8 @@ public class ServerData {
                 Log.w("Server", result);
                 if (cu == SIGN_UP || cu == SIGN_IN) {
                     if (result.contains("successful") && result.contains("user")) {
-                        context.startActivity(new Intent(context, CutomerActivity.class));
+                        malek=false;
+                        context.startActivity(new Intent(context, MapsActivity.class));
                         ((Activity)context).finish();
                     } else if (result.contains("successful") && result.contains("costumer")) {
                         context.startActivity(new Intent(context, OwenerActivity.class));

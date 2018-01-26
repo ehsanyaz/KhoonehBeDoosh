@@ -35,6 +35,7 @@ import java.util.List;
 import Modules.DirectionFinder;
 import Modules.DirectionFinderListener;
 import Modules.Route;
+import ir.ac.bonabu.khoonehbedoosh.Server_Connection.ServerData;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
@@ -160,7 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnInfoWindowClickListener(this);
 
 //Example.sharedPreferences.getBoolean("malek",false)
-        if (CutomerActivity.malek) {
+        if (ServerData.malek) {
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(LatLng latLng) {
@@ -314,7 +315,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        if(CutomerActivity.malek)
+        if(ServerData.malek)
         {
             Toast.makeText(this, "next activity malek",Toast.LENGTH_SHORT).show();
         }
