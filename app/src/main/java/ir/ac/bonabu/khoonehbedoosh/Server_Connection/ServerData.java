@@ -38,6 +38,7 @@ public class ServerData {
 
     final int SIGN_IN = 0;
     final int SIGN_UP = 1;
+    final int LOCATION = 2;
     boolean check = true;
     Context context;
     ProgressDialog progressDialog;
@@ -45,6 +46,7 @@ public class ServerData {
     String ServerUploadPath = "http://530d2d83.ngrok.io/Php/kbd/test.php";
     User.signUp user;
     User.signIn signIn;
+    User.setLocation location;
 
     public ServerData(Context context, User.signUp user, int cu) {
         this.context = context;
@@ -78,11 +80,11 @@ public class ServerData {
                progressDialog.dismiss();
                 Log.w("Server", result);
                 if (cu == SIGN_UP || cu == SIGN_IN) {
-                    if (result.contains("successful") && result.contains("user")) {
+                    if (result.contains("successful") && result.contains("costumer")) {
                         malek=true;
                         context.startActivity(new Intent(context, MapsActivity.class));
                         ((Activity)context).finish();
-                    } else if (result.contains("successful") && result.contains("costumer")) {
+                    } else if (result.contains("successful") && result.contains("owner")) {
                         context.startActivity(new Intent(context, OwenerActivity.class));
                         ((Activity)context).finish();
                     } else {
@@ -103,7 +105,7 @@ public class ServerData {
                         }
                         msg.create().show();
                     }
-                } else {
+                } else if(cu==LOCATION){
 
                 }
                 // Log.w("Server", result);
@@ -122,6 +124,9 @@ public class ServerData {
                     FinalData = imageProcessClass.ImageHttpRequest(ServerUploadPath, HashMapParams);
                 } else if (cu == SIGN_IN) {
                     HashMap<String, String> HashMapParams = signInPreoare();
+                    FinalData = imageProcessClass.ImageHttpRequest(ServerUploadPath, HashMapParams);
+                }else if (cu == LOCATION) {
+                    HashMap<String, String> HashMapParams = mapdata();
                     FinalData = imageProcessClass.ImageHttpRequest(ServerUploadPath, HashMapParams);
                 }
 
@@ -248,11 +253,23 @@ public class ServerData {
     }
     public HashMap<String, String> mapdata() {
         HashMap<String, String> HashMapParams = new HashMap<String, String>();
-        HashMapParams.put("u[username]", signIn.getUsername());
-        HashMapParams.put("u[password]", signIn.getPassword());
-        Log.e("server", signIn.getUsername());
-        Log.e("server", signIn.getPassword());
-        HashMapParams.put("action", "0");
+        HashMapParams.put("d[name]", location.getName());
+        HashMapParams.put("d[gps]", location.getGps());
+        HashMapParams.put("d[state]", location.getState());
+        HashMapParams.put("d[bathroom]", location.getBathroom());
+        HashMapParams.put("d[wc]", location.getWc());
+        HashMapParams.put("d[poll]", location.getPoll());
+        HashMapParams.put("d[parking]", location.getParking());
+        HashMapParams.put("d[mobl]", location.getMobl());
+        HashMapParams.put("d[kitchen]", location.getKitchen());
+        HashMapParams.put("d[heater]", location.getHeater());
+        HashMapParams.put("d[aircon]", location.getAircon());
+        HashMapParams.put("d[tv]", location.getTv());
+        HashMapParams.put("d[wifi]", location.getWifi());
+        HashMapParams.put("d[elevator]", location.getElevator());
+        HashMapParams.put("d[refrigriat]", location.getRefrigriat());
+        HashMapParams.put("d[user_id]", location.getUser_id());
+        HashMapParams.put("action", "2");
         return HashMapParams;
     }
 }
