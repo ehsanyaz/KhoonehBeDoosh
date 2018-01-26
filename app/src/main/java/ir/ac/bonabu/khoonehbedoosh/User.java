@@ -99,7 +99,7 @@ public class User {
         String refrigriat = "";
         String user_id = "";
 
-        public String getName() {
+        public String getName()    {
             return name;
         }
 
