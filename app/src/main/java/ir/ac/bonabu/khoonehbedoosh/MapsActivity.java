@@ -309,6 +309,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+
     @Override
     public void onInfoWindowClick(Marker marker) {
         Toast.makeText(this, "next activity",Toast.LENGTH_SHORT).show();
