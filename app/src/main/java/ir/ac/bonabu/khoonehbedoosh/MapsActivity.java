@@ -37,7 +37,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private Button btnFindPath;
     private EditText etOrigin;
-    private EditText etDestination;
+//    private EditText etDestination;
     private List<Marker> originMarkers = new ArrayList<>();
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
@@ -56,7 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         btnFindPath = (Button) findViewById(R.id.btnFindPath);
         etOrigin = (EditText) findViewById(R.id.etOrigin);
-        etDestination = (EditText) findViewById(R.id.etDestination);
+//        etDestination = (EditText) findViewById(R.id.etDestination);
 
         btnFindPath.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,22 +66,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         listPoints=new ArrayList<>();
+
+
     }
 
     private void sendRequest() {
         String origin = etOrigin.getText().toString();
-        String destination = etDestination.getText().toString();
+//        String destination = etDestination.getText().toString();
         if (origin.isEmpty()) {
             Toast.makeText(this, "Please enter origin address!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (destination.isEmpty()) {
-            Toast.makeText(this, "Please enter destination address!", Toast.LENGTH_SHORT).show();
-            return;
-        }
+//        if (destination.isEmpty()) {
+//            Toast.makeText(this, "Please enter destination address!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
 
         try {
-            new DirectionFinder(this, origin, destination).execute();
+            new DirectionFinder(this, origin,origin).execute();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -90,13 +92,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+
         LatLng hcmus = new LatLng(35.692333, 51.393076);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 12));
 //        originMarkers.add(mMap.addMarker(new MarkerOptions()
 //                .title("Đại học Khoa học tự nhiên")
 //                .position(hcmus)));
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -111,21 +116,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))
 //                .title(route.startAddress)
 //                .position(route.startLocation)));
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-            @Override
-            public void onMapClick(LatLng latLng) {
-                listPoints.add(latLng);
+        if (Example.sharedPreferences.getBoolean("malek",false)) {
+            mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                @Override
+                public void onMapClick(LatLng latLng) {
+                    listPoints.add(latLng);
 
-                MarkerOptions markerOptions=new MarkerOptions();
-                markerOptions.position(latLng);
+                    MarkerOptions markerOptions = new MarkerOptions();
+                    markerOptions.position(latLng);
 
-                originMarkers.add(mMap.addMarker(new MarkerOptions().position(latLng)));
+                    originMarkers.add(mMap.addMarker(new MarkerOptions().position(latLng)));
 
 //                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue));
 //
 //                mMap.addMarker(markerOptions);
-            }
-        });
+                }
+            });
+        }
+        else
+        {
+            ArrayList<LatLng> latLngs=new ArrayList<>();
+            LatLng hcmus1 = new LatLng(35.692333, 51.393076);
+            latLngs.add(hcmus1);
+            LatLng hcmus2 = new LatLng(40.692333, 56.393076);
+            latLngs.add(hcmus2);
+            drowLocation(latLngs);
+
+        }
 //        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
 //            @Override
 //            public void onMapLongClick(LatLng latLng) {
@@ -141,6 +158,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        });
     }
 
+    public void drowLocation(ArrayList<LatLng> list)
+    {
+        for(int x=0;x<list.size();x++)
+            originMarkers.add(mMap.addMarker(new MarkerOptions().position(list.get(x))));
+    }
 
     @Override
     public void onDirectionFinderStart() {
@@ -174,28 +196,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         destinationMarkers = new ArrayList<>();
 
         for (Route route : routes) {
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 16));
-            ((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
-            ((TextView) findViewById(R.id.tvDistance)).setText(route.distance.text);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 12));
+//            ((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
+//            ((TextView) findViewById(R.id.tvDistance)).setText(route.distance.text);
 
-            originMarkers.add(mMap.addMarker(new MarkerOptions()
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))
-                    .title(route.startAddress)
-                    .position(route.startLocation)));
-            destinationMarkers.add(mMap.addMarker(new MarkerOptions()
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.end_green))
-                    .title(route.endAddress)
-                    .position(route.endLocation)));
-
-            PolylineOptions polylineOptions = new PolylineOptions().
-                    geodesic(true).
-                    color(Color.BLUE).
-                    width(10);
-
-            for (int i = 0; i < route.points.size(); i++)
-                polylineOptions.add(route.points.get(i));
-
-            polylinePaths.add(mMap.addPolyline(polylineOptions));
+//            originMarkers.add(mMap.addMarker(new MarkerOptions()
+//                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))
+//                    .title(route.startAddress)
+//                    .position(route.startLocation)));
+//            destinationMarkers.add(mMap.addMarker(new MarkerOptions()
+//                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.end_green))
+//                    .title(route.endAddress)
+//                    .position(route.endLocation)));
+//
+//            PolylineOptions polylineOptions = new PolylineOptions().
+//                    geodesic(true).
+//                    color(Color.BLUE).
+//                    width(10);
+//
+//            for (int i = 0; i < route.points.size(); i++)
+//                polylineOptions.add(route.points.get(i));
+//
+//            polylinePaths.add(mMap.addPolyline(polylineOptions));
         }
     }
 }
