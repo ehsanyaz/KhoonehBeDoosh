@@ -2,48 +2,54 @@ package ir.ac.bonabu.khoonehbedoosh;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import Modules.DirectionFinder;
 import Modules.DirectionFinderListener;
 import Modules.Route;
-import ir.ac.bonabu.khoonehbedoosh.Server_Connection.GPSTracker;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
-    private GoogleMap mMap;
-    private Button btnFindPath;
+    private boolean flag=true;
+
+    public static GoogleMap mMap;
+    private ImageView btnFindPath;
     private EditText etOrigin;
 //    private EditText etDestination;
     private List<Marker> originMarkers = new ArrayList<>();
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
+
+//    private Marker marker;
 
     ArrayList<LatLng> listPoints;
 
@@ -56,9 +62,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        btnFindPath = (Button) findViewById(R.id.btnFindPath);
+        btnFindPath = (ImageView) findViewById(R.id.btnFindPath);
         etOrigin = (EditText) findViewById(R.id.etOrigin);
 //        etDestination = (EditText) findViewById(R.id.etDestination);
+
 
         btnFindPath.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +76,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         listPoints=new ArrayList<>();
 
-
     }
+
 
     private void sendRequest() {
         String origin = etOrigin.getText().toString();
@@ -99,35 +106,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng hcmus = new LatLng(35.692333, 51.393076);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 12));
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.getUiSettings().setCompassEnabled(true);
-        Button btnShowLocation = (Button) findViewById(R.id.btnmylocation);
+      //  mMap.getUiSettings().setCompassEnabled(true);
+      //  Button btnShowLocation = (Button) findViewById(R.id.btnmylocation);
 
         // show location button click event
-        btnShowLocation.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                // create class object
-                GPSTracker gps = new GPSTracker(MapsActivity.this);
-
-                // check if GPS enabled     
-                if(gps.canGetLocation()){
-
-                    double latitude = gps.getLatitude();
-                    double longitude = gps.getLongitude();
-
-                    // \n is for new line
-                    LatLng location= new LatLng(latitude, longitude);
-                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-                }else{
-                    // can't get location
-                    // GPS or Network is not enabled
-                    // Ask user to enable GPS/network in settings
-                    gps.showSettingsAlert();
-                }
-
-            }
-        });
+//        btnShowLocation.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View arg0) {
+//                // create class object
+//                GPSTracker gps = new GPSTracker(MapsActivity.this);
+//
+//                // check if GPS enabled
+//                if(gps.canGetLocation()){
+//
+//                    double latitude = gps.getLatitude();
+//                    double longitude = gps.getLongitude();
+//
+//                    // \n is for new line
+//                    LatLng location= new LatLng(latitude, longitude);
+//                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+//                }else{
+//                    // can't get location
+//                    // GPS or Network is not enabled
+//                    // Ask user to enable GPS/network in settings
+//                    gps.showSettingsAlert();
+//                }
+//
+//            }
+//        });showSettingsAlert
 
 //        originMarkers.add(mMap.addMarker(new MarkerOptions()
 //                .title("Đại học Khoa học tự nhiên")
@@ -149,7 +156,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))
 //                .title(route.startAddress)
 //                .position(route.startLocation)));
-        if (Example.sharedPreferences.getBoolean("malek",false)) {
+
+        mMap.setOnInfoWindowClickListener(this);
+
+//Example.sharedPreferences.getBoolean("malek",false)
+        if (CutomerActivity.malek) {
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(LatLng latLng) {
@@ -158,7 +169,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.position(latLng);
 
-                    originMarkers.add(mMap.addMarker(new MarkerOptions().position(latLng)));
+                    if(flag) {
+                        originMarkers.add(mMap.addMarker(new MarkerOptions().position(latLng)));
+                        Marker marker=mMap.addMarker(new MarkerOptions().position(latLng).title("ثبت مشخصات"));
+                        marker.showInfoWindow();
+                        flag = false;
+                    }
+                    else {
+                        if (originMarkers.size()>0)
+                            originMarkers.remove(originMarkers.size()-1);
+                        mMap.clear();
+                        originMarkers.add(mMap.addMarker(new MarkerOptions().position(latLng)));
+                        Marker marker=mMap.addMarker(new MarkerOptions().position(latLng).title("ثبت مشخصات"));
+                        marker.showInfoWindow();
+                    }
 
 //                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue));
 //
@@ -198,8 +222,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void drowLocation(ArrayList<LatLng> list)
     {
-        for(int x=0;x<list.size();x++)
-            originMarkers.add(mMap.addMarker(new MarkerOptions().position(list.get(x))));
+//        Drawable myDrawable= ResourcesCompat.getDrawable(getResources(),R.drawable.start_blue,null);
+//        Bitmap bit= ((BitmapDrawable)myDrawable).getBitmap();
+
+//        InfoWindowData info=new InfoWindowData();
+//
+//        CustomInfoWindowGoogleMap customInfoWindow = new CustomInfoWindowGoogleMap(this);
+
+        for(int x=0;x<list.size();x++) {
+//            info.setImage(BitmapDescriptorFactory.fromBitmap(bit));
+//            info.setHotel("ssfdsfsd");
+//            info.setFood("sfsdfds");
+//            info.setTransport("dfdsfsd");
+
+//            mMap.setInfoWindowAdapter(customInfoWindow);
+
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(list.get(x))
+                    .title("Snowqualmie Falls")
+                    .snippet("Snoqualmie Falls is located 25 miles east of Seattle.")
+                    .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_BLUE));
+
+            CustomInfoWindowAdapter adapter = new CustomInfoWindowAdapter(MapsActivity.this);
+            mMap.setInfoWindowAdapter(adapter);
+
+//            originMarkers.add(mMap.addMarker(new MarkerOptions().position(list.get(x))));
+            Marker m = mMap.addMarker(markerOptions);
+            m.showInfoWindow();
+        }
     }
 
     @Override
@@ -257,5 +307,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //
 //            polylinePaths.add(mMap.addPolyline(polylineOptions));
         }
+    }
+
+
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Intent intent =new Intent(MapsActivity.this,)
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker)
+    {
+//        marker.setTitle("ssdfkjdbfsk");
+//        marker.showInfoWindow();
+//
+        return false;
     }
 }

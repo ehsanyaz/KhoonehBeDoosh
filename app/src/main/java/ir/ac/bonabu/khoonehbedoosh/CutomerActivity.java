@@ -19,6 +19,7 @@ public class CutomerActivity extends Activity {
 
     private Typeface typeface;
 
+    public static boolean malek=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,17 @@ public class CutomerActivity extends Activity {
         typeface=Typeface.createFromAsset(getAssets(),"Fonts/font.ttf");
         FilterMAp.setTypeface(typeface);
         showMap.setTypeface(typeface);
+
+        showMap.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                malek=false;
+                Intent intent=new Intent(CutomerActivity.this,MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         
     }
