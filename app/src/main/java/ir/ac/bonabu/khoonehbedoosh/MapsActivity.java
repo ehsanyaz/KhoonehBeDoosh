@@ -312,7 +312,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Toast.makeText(this, "next activity",Toast.LENGTH_SHORT).show();
+        if(CutomerActivity.malek)
+        {
+            Toast.makeText(this, "next activity malek",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this, "next activity karbar",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
