@@ -21,10 +21,12 @@
         android:layout_height="50dp"
         android:text="ورود"
         android:textColor="#fff"
+        android:visibility="visible"
         android:layout_margin="20dp"
         android:background="@drawable/uibtn"
         android:layout_gravity="bottom|center"/>
     <LinearLayout
+        android:padding="15dp"
         android:id="@+id/sigin_lay"
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -105,7 +107,7 @@
     <LinearLayout
         android:id="@+id/sigup_lay"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="match_parent"
         android:layout_marginBottom="0dp"
         android:layout_weight="0.1"
         android:background="#ffffff"
@@ -206,38 +208,44 @@
 
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:layout_gravity="right"
                 android:padding="15dp"
+                android:orientation="horizontal"
                 >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/baseColor"
-                    android:text="نوع کاربر"
-                    android:textSize="16dp" />
 
 
                 <RadioButton
                     android:id="@+id/splash_customer_radio"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight=".3"
                     android:text="مشتری"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
+                    android:layout_gravity="left"
                     android:layout_marginRight="5dp"
                     android:textColor="#2d2d2d" />
 
                 <RadioButton
                     android:id="@+id/splash_owner_radio"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight=".4"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
+                    android:layout_gravity="left"
                     android:text="صاحب ملک"
                     android:layout_marginRight="5dp"
                     android:textColor="#2d2d2d" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight=".3"
+                    android:gravity="center_vertical"
+                    android:text="نوع کاربر"
+                    android:textColor="@color/baseColor"
+                    android:textSize="16dp" />
 
 
             </RadioGroup>

@@ -123,10 +123,15 @@ public class Splash extends Activity {
     @Override
     public void onBackPressed() {
         if (signup_Layot.getVisibility() == View.VISIBLE) {
-            signin_Layot.setVisibility(View.GONE);
-            signin_laybtn.setVisibility(View.VISIBLE);
+            signup_Layot.setVisibility(View.INVISIBLE);
+            signin_Layot.setVisibility(View.VISIBLE);
 
-        } else  {
+
+        } else if(signin_Layot.getVisibility()==View.VISIBLE) {
+            signin_Layot.setVisibility(View.GONE);
+            signup_Layot.setVisibility(View.GONE);
+            signin_laybtn.setVisibility(View.VISIBLE);
+        }else {
             super.onBackPressed();
         }
     }
