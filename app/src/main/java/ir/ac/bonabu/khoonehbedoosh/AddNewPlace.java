@@ -89,7 +89,7 @@ public class AddNewPlace extends Activity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  User.setLocation loc=new User.setLocation(state.getText().toString(),gps,"0",bathroom+"",)
+                User.setLocation loc=new User.setLocation(state.getText().toString(),gps,"0",havebathroom+"",haveToilet+"",havePool+"",haveParking+"",haveMobl+"",haveKitchen+"",haveHeater+"",haveCooler+"",haveTV+"",haveWIFI+"",haveEleveretor+"",haveRefreg+"",Splash.getUserName());
             }
         });
     }
