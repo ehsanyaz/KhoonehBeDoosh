@@ -239,4 +239,13 @@ public class ServerData {
         HashMapParams.put("action", "0");
         return HashMapParams;
     }
+    public HashMap<String, String> () {
+        HashMap<String, String> HashMapParams = new HashMap<String, String>();
+        HashMapParams.put("u[username]", signIn.getUsername());
+        HashMapParams.put("u[password]", signIn.getPassword());
+        Log.e("server", signIn.getUsername());
+        Log.e("server", signIn.getPassword());
+        HashMapParams.put("action", "0");
+        return HashMapParams;
+    }
 }
