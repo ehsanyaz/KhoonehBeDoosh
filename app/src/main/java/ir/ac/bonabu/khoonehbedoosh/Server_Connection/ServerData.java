@@ -81,7 +81,7 @@ public class ServerData {
                 Log.w("Server", result);
                 if (cu == SIGN_UP || cu == SIGN_IN) {
                     if (result.contains("successful") && result.contains("user")) {
-                        malek=false;
+                        malek=true;
                         context.startActivity(new Intent(context, MapsActivity.class));
                         ((Activity)context).finish();
                     } else if (result.contains("successful") && result.contains("costumer")) {

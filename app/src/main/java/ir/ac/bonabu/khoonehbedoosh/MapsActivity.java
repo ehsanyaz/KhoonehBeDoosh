@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -54,6 +55,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     ArrayList<LatLng> listPoints;
 
+    private Button FilterMAp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +79,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         listPoints=new ArrayList<>();
+
+        FilterMAp=(Button)findViewById(R.id.customer_activity_findPlace_btn);
+        FilterMAp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getApplicationContext(),FindPlace.class);
+                startActivity(i);
+
+            }
+        });
 
     }
 
