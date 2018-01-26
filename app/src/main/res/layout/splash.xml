@@ -32,7 +32,7 @@
         android:layout_weight="0.1"
         android:background="#ffffff"
         android:visibility="gone"
-        android:padding="10dp">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +57,9 @@
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:height="0dp"
+                android:padding="10dp"
                 android:hint="نام کاربری"
+                android:singleLine="true"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
@@ -70,6 +72,8 @@
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:hint="گذر واژه"
+                android:singleLine="true"
+                android:padding="10dp"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
@@ -79,6 +83,7 @@
                 android:layout_height="0dp"
                 android:layout_weight=".2"
                 android:text="ورود !"
+
                 android:textColor="#fff"
                 android:background="@drawable/uibtn"
                 android:layout_gravity="center"/>
@@ -100,7 +105,7 @@
     <LinearLayout
         android:id="@+id/sigup_lay"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="550dp"
         android:layout_marginBottom="0dp"
         android:layout_weight="0.1"
         android:background="#ffffff"
@@ -131,8 +136,9 @@
             android:layout_weight=".2"
             android:height="0dp"
             android:hint="نام کاربری"
+                android:singleLine="true"
             android:background="@drawable/editext"
-            android:paddingRight="10dp"
+                android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
             <EditText
                 android:id="@+id/signup_e"
@@ -142,6 +148,7 @@
                 android:layout_weight=".2"
                 android:height="0dp"
                 android:hint="ایمیل"
+                android:singleLine="true"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
@@ -154,6 +161,7 @@
                 android:layout_weight=".2"
                 android:height="0dp"
                 android:hint="گذر واژه"
+                android:singleLine="true"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
@@ -165,7 +173,8 @@
                 android:layout_weight=".2"
                 android:height="0dp"
                 android:hint="شماره تلفن"
-                android:inputType="number"
+                android:inputType="phone"
+                android:singleLine="true"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
@@ -177,6 +186,7 @@
                 android:layout_weight=".2"
                 android:height="0dp"
                 android:hint="نام"
+                android:singleLine="true"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
@@ -189,6 +199,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:hint="نام خانوادگی"
+                android:singleLine="true"
                 android:background="@drawable/editext"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"/>
