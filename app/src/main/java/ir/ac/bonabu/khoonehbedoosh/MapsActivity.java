@@ -28,9 +28,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ir.ac.bonabu.khoonehbedoosh.Modules.DirectionFinder;
-import ir.ac.bonabu.khoonehbedoosh.Modules.DirectionFinderListener;
-import ir.ac.bonabu.khoonehbedoosh.Modules.Route;
+import Modules.DirectionFinder;
+import Modules.DirectionFinderListener;
+import Modules.Route;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
 
@@ -86,8 +86,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng hcmus = new LatLng(10.762963, 106.682394);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 18));
+        LatLng hcmus = new LatLng(35.692333, 51.393076);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 12));
         originMarkers.add(mMap.addMarker(new MarkerOptions()
                 .title("Đại học Khoa học tự nhiên")
                 .position(hcmus)));

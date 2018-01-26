@@ -1,4 +1,4 @@
-package ir.ac.bonabu.khoonehbedoosh.Modules;
+package Modules;
 
 /**
  * Created by Mai Thanh Hiep on 4/3/2016.

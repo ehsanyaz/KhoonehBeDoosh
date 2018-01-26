@@ -1,4 +1,4 @@
-package ir.ac.bonabu.khoonehbedoosh.Modules;
+package Modules;
 
 import android.os.AsyncTask;
 
