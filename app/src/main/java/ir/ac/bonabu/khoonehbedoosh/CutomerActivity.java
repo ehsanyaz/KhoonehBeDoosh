@@ -19,7 +19,7 @@ public class CutomerActivity extends Activity {
 
     private Typeface typeface;
 
-    public static boolean malek=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,7 @@ public class CutomerActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                malek=false;
+//                malek=false;
                 Intent intent=new Intent(CutomerActivity.this,MapsActivity.class);
                 startActivity(intent);
             }

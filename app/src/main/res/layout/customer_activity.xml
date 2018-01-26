@@ -12,15 +12,15 @@
     android:id="@+id/customer_layout"
     tools:ignore="InvalidId">
 
-    <Button
-        android:id="@+id/customer_activity_findPlace_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/FilteringMap"
-        android:background="@drawable/buttonshape"
-        android:layout_marginBottom="15dp"
-        android:padding="7dp"
-        android:textSize="30dp"/>
+    <!--<Button-->
+        <!--android:id="@+id/customer_activity_findPlace_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/FilteringMap"-->
+        <!--android:background="@drawable/buttonshape"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:padding="7dp"-->
+        <!--android:textSize="30dp"/>-->
 
     <Button
         android:id="@+id/customer_activity_Map_btn"

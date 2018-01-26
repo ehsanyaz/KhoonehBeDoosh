@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ import java.util.List;
 import Modules.DirectionFinder;
 import Modules.DirectionFinderListener;
 import Modules.Route;
+import ir.ac.bonabu.khoonehbedoosh.Server_Connection.ServerData;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
@@ -52,6 +54,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //    private Marker marker;
 
     ArrayList<LatLng> listPoints;
+
+    private Button FilterMAp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         listPoints=new ArrayList<>();
+
+        FilterMAp=(Button)findViewById(R.id.customer_activity_findPlace_btn);
+        FilterMAp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getApplicationContext(),FindPlace.class);
+                startActivity(i);
+
+            }
+        });
 
     }
 
@@ -160,7 +174,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnInfoWindowClickListener(this);
 
 //Example.sharedPreferences.getBoolean("malek",false)
-        if (CutomerActivity.malek) {
+        if (ServerData.malek) {
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(LatLng latLng) {
@@ -314,7 +328,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        if(CutomerActivity.malek)
+        if(ServerData.malek)
         {
             Toast.makeText(this, "next activity malek",Toast.LENGTH_SHORT).show();
         }

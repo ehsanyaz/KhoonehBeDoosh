@@ -20,13 +20,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
+            <Button
+                android:id="@+id/customer_activity_findPlace_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="جست و جو دقیق"
+                android:background="@color/white"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/etOrigin"
-                android:layout_weight="0.85"
+                android:layout_weight="0.55"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:hint="آدرس را وارد کنید" />
@@ -38,6 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.15"
                 android:src="@drawable/search" />
+
+
 
         </LinearLayout>
 
