@@ -19,7 +19,7 @@
         android:id="@+id/open_layout"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Sign In "
+        android:text="ورود"
         android:textColor="#fff"
         android:layout_margin="20dp"
         android:background="@drawable/uibtn"
@@ -44,46 +44,49 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight=".2"
-                android:text="SIGN IN"
+                android:text="ورود کاربران"
                 android:textAlignment="center"
                 android:textColor="#fd3a3a"
                 android:textSize="20dp" />
 
 
             <EditText
+                android:id="@+id/signin_u"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:height="0dp"
-                android:hint="Username"
+                android:hint="نام کاربری"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
+                android:paddingRight="10dp"/>
 
 
             <EditText
+                android:id="@+id/signin_p"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
-                android:hint="Password"
+                android:hint="گذر واژه"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
+                android:paddingRight="10dp"/>
             <Button
                 android:id="@+id/sigin"
                 android:layout_width="250dp"
                 android:layout_height="0dp"
                 android:layout_weight=".2"
-                android:text="SignUp!"
+                android:text="ورود !"
                 android:textColor="#fff"
                 android:background="@drawable/uibtn"
                 android:layout_gravity="center"/>
             <TextView
+                android:id="@+id/go_toSignup"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight=".1"
-                android:text="Sign Up ?"
+                android:text="ثبت نام ؟"
                 android:textAlignment="center"
                 android:textColor="#468dff"
                 android:textSize="16dp"
@@ -95,11 +98,11 @@
     <LinearLayout
         android:id="@+id/sigup_lay"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="550dp"
         android:layout_marginBottom="0dp"
         android:layout_weight="0.1"
         android:background="#ffffff"
-        android:visibility="visible"
+        android:visibility="gone"
         android:padding="10dp">
 
         <LinearLayout
@@ -112,82 +115,99 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight=".2"
-                android:text="Sign Up"
+                android:text="ثبت نام کاربر"
                 android:textAlignment="center"
                 android:textColor="#fd3a3a"
                 android:textSize="20dp" />
 
 
             <EditText
+                android:id="@+id/signup_u"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="10dp"
             android:layout_weight=".2"
             android:height="0dp"
-            android:hint="Username"
+            android:hint="نام کاربری"
             android:background="@drawable/editext"
-            android:paddingLeft="10dp"/>
-
+            android:paddingRight="10dp"/>
             <EditText
+                android:id="@+id/signup_e"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:height="0dp"
-                android:hint="Password"
+                android:hint="ایمیل"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
+                android:paddingRight="10dp"/>
+
             <EditText
+                android:id="@+id/signup_p"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:height="0dp"
-                android:hint="Phone Number"
+                android:hint="گذر واژه"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
+                android:paddingRight="10dp"/>
             <EditText
+                android:id="@+id/signup_ph"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
                 android:height="0dp"
-                android:hint="Name"
+                android:hint="شماره تلفن"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
-
-
+                android:paddingRight="10dp"/>
             <EditText
+                android:id="@+id/signup_n"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
-                android:hint="Lastname"
+                android:height="0dp"
+                android:hint="نام"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
+                android:paddingRight="10dp"/>
+
+
             <EditText
+                android:id="@+id/signup_ln"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_weight=".2"
-                android:hint="National Code"
+                android:hint="نام خانوادگی"
                 android:background="@drawable/editext"
-                android:paddingLeft="10dp"/>
+                android:paddingRight="10dp"/>
+            <EditText
+                android:id="@+id/signup_nc"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight=".2"
+                android:hint="کد ملی"
+                android:background="@drawable/editext"
+                android:paddingRight="10dp"/>
             <Button
                 android:id="@+id/sigup"
                 android:layout_width="250dp"
                 android:layout_height="0dp"
                 android:layout_weight=".2"
-                android:text="SignUp!"
+                android:text="ثبت نام"
                 android:textColor="#fff"
                 android:background="@drawable/uibtn"
                 android:layout_gravity="center"/>
             <TextView
+                android:id="@+id/go_toSignin"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight=".1"
-                android:text="Sign In ?"
+                android:text="قبلا ثبت نام کرده اید؟"
                 android:textAlignment="center"
                 android:textColor="#468dff"
                 android:textSize="16dp"
