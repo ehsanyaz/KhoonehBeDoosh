@@ -2,18 +2,11 @@ package ir.ac.bonabu.khoonehbedoosh;
 
 import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -22,7 +15,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -36,7 +28,7 @@ import java.util.List;
 import Modules.DirectionFinder;
 import Modules.DirectionFinderListener;
 import Modules.Route;
-import ir.ac.bonabu.khoonehbedoosh.Server_Connection.ServerData;
+import ir.ac.bonabu.khoonehbedoosh.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
@@ -45,7 +37,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static GoogleMap mMap;
     private ImageView btnFindPath;
     private EditText etOrigin;
-//    private EditText etDestination;
+    //    private EditText etDestination;
     private List<Marker> originMarkers = new ArrayList<>();
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
@@ -54,8 +46,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //    private Marker marker;
 
     ArrayList<LatLng> listPoints;
-
-    private Button FilterMAp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,16 +69,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         listPoints=new ArrayList<>();
-
-        FilterMAp=(Button)findViewById(R.id.customer_activity_findPlace_btn);
-        FilterMAp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i =new Intent(getApplicationContext(),FindPlace.class);
-                startActivity(i);
-
-            }
-        });
 
     }
 
@@ -120,8 +100,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng hcmus = new LatLng(35.692333, 51.393076);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 12));
         mMap.getUiSettings().setZoomControlsEnabled(true);
-      //  mMap.getUiSettings().setCompassEnabled(true);
-      //  Button btnShowLocation = (Button) findViewById(R.id.btnmylocation);
+        //  mMap.getUiSettings().setCompassEnabled(true);
+        //  Button btnShowLocation = (Button) findViewById(R.id.btnmylocation);
 
         // show location button click event
 //        btnShowLocation.setOnClickListener(new View.OnClickListener() {
@@ -173,8 +153,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.setOnInfoWindowClickListener(this);
 
-//Example.sharedPreferences.getBoolean("malek",false)
-        if (ServerData.malek) {
+
+        if (Example.sharedPreferences.getBoolean("malek",false)) {
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(LatLng latLng) {
@@ -208,7 +188,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             ArrayList<LatLng> latLngs=new ArrayList<>();
             LatLng hcmus1 = new LatLng(35.692333, 51.393076);
-          //  hcmus1.latitude
+            //  hcmus1.latitude
             latLngs.add(hcmus1);
             LatLng hcmus2 = new LatLng(35.0, 50.0);
             latLngs.add(hcmus2);
@@ -323,23 +303,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-
-
-
     @Override
     public void onInfoWindowClick(Marker marker) {
-        if(ServerData.malek)
-        {
-            String data=array2String(listPoints);
-            Intent intent =new Intent(MapsActivity.this,AddNewPlace.class);
-            intent.putExtra("gps",data);
-            startActivity(intent);
-        }
-        else
-        {
-            Toast.makeText(this, "next activity karbar",Toast.LENGTH_SHORT).show();
-        }
-
+        Toast.makeText(this, "next activity",
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -349,12 +316,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        marker.showInfoWindow();
 //
         return false;
-    }
-    public static String array2String(ArrayList<LatLng> A) {
-        String r = "";
-        for (int i = 0; i < A.size(); i++) {
-            r += A.get(i) + "";
-        }
-        return r;
     }
 }
