@@ -33,14 +33,16 @@
         <activity android:name=".Splash">
 
         </activity>
-        <activity android:name=".CutomerActivity" />
-        <activity android:name=".OwenerActivity" />
-        <activity android:name=".FindPlace">
+        <activity android:name=".CutomerActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".OwenerActivity" />
+        <activity android:name=".FindPlace">
+
         </activity>
         <activity android:name=".ManageOwnerPlaces" />
         <activity android:name=".AddNewPlace">

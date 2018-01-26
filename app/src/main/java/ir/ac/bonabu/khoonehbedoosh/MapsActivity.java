@@ -158,8 +158,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.setOnInfoWindowClickListener(this);
 
-
-        if (Example.sharedPreferences.getBoolean("malek",false)) {
+//Example.sharedPreferences.getBoolean("malek",false)
+        if (CutomerActivity.malek) {
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(LatLng latLng) {
