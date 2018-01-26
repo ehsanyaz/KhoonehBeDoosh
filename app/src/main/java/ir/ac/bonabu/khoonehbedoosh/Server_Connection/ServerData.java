@@ -125,6 +125,9 @@ public class ServerData {
                 } else if (cu == SIGN_IN) {
                     HashMap<String, String> HashMapParams = signInPreoare();
                     FinalData = imageProcessClass.ImageHttpRequest(ServerUploadPath, HashMapParams);
+                }else if (cu == LOCATION) {
+                    HashMap<String, String> HashMapParams = mapdata();
+                    FinalData = imageProcessClass.ImageHttpRequest(ServerUploadPath, HashMapParams);
                 }
 
                 return FinalData;
