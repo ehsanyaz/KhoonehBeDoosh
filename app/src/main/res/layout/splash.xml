@@ -92,6 +92,109 @@
 
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sigup_lay"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="0dp"
+        android:layout_weight="0.1"
+        android:background="#ffffff"
+        android:visibility="visible"
+        android:padding="10dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight=".2"
+                android:text="Sign Up"
+                android:textAlignment="center"
+                android:textColor="#fd3a3a"
+                android:textSize="20dp" />
+
+
+            <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight=".2"
+            android:height="0dp"
+            android:hint="Username"
+            android:background="@drawable/editext"
+            android:paddingLeft="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight=".2"
+                android:height="0dp"
+                android:hint="Password"
+                android:background="@drawable/editext"
+                android:paddingLeft="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight=".2"
+                android:height="0dp"
+                android:hint="Phone Number"
+                android:background="@drawable/editext"
+                android:paddingLeft="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight=".2"
+                android:height="0dp"
+                android:hint="Name"
+                android:background="@drawable/editext"
+                android:paddingLeft="10dp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight=".2"
+                android:hint="Lastname"
+                android:background="@drawable/editext"
+                android:paddingLeft="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight=".2"
+                android:hint="National Code"
+                android:background="@drawable/editext"
+                android:paddingLeft="10dp"/>
+            <Button
+                android:id="@+id/sigup"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:layout_weight=".2"
+                android:text="SignUp!"
+                android:textColor="#fff"
+                android:background="@drawable/uibtn"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight=".1"
+                android:text="Sign In ?"
+                android:textAlignment="center"
+                android:textColor="#468dff"
+                android:textSize="16dp"
+                android:layout_margin="5dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

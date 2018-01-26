@@ -18,11 +18,11 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         signin = (Button) findViewById(R.id.open_layout);
+        signup_Layot = (LinearLayout) findViewById(R.id.sigin_lay);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signin.setVisibility(View.GONE);
-                signup_Layot = (LinearLayout) findViewById(R.id.sigin_lay);
                 signup_Layot.setVisibility(View.VISIBLE);
             }
         });
