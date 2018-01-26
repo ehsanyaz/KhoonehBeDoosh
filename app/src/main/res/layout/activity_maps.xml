@@ -5,67 +5,95 @@
     tools:context="ir.ac.bonabu.khoonehbedoosh.MapsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/baseColor"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
     android:orientation="vertical"  >
 
-    <EditText
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etOrigin"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:hint="Enter address" />
+        android:layout_gravity="right">
 
-    <!--<EditText-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/etOrigin"
+                android:layout_weight="0.85"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="آدرس را وارد کنید" />
+
+            <ImageView
+                android:id="@+id/btnFindPath"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:src="@drawable/search" />
+
+        </LinearLayout>
+
+
+
+        <!--<EditText-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:hint="Enter destination address"-->
         <!--android:id="@+id/etDestination" />-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:background="@color/baseColor"
-        >
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Find path"
-            android:id="@+id/btnFindPath" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Location"
-            android:id="@+id/btnmylocation" />
-        <!--<ImageView-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_width="40dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:src="@drawable/ic_distance"/>-->
-        <!--<TextView-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_width="wrap_content"-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:text="0 km"-->
-            <!--android:id="@+id/tvDistance" />-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:background="@color/baseColor"-->
+            <!--&gt;-->
+            <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Find path"-->
+                <!--android:id="@+id/btnFindPath" />-->
 
-        <!--<ImageView-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_width="40dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:padding="5dp"-->
-            <!--android:src="@drawable/ic_clock"/>-->
-        <!--<TextView-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="0 min"-->
-            <!--android:id="@+id/tvDuration" />-->
-    </LinearLayout>
+            <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="20dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginTop="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="40dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_distance"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="0 km"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/tvDistance" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="20dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginTop="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="40dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:padding="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_clock"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="0 min"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/tvDuration" />&ndash;&gt;-->
+        <!--</LinearLayout>-->
+
+    </FrameLayout>
+
+
+
 
 
     <fragment
