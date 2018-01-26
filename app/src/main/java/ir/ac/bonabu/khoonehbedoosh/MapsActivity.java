@@ -32,6 +32,7 @@ import java.util.List;
 import Modules.DirectionFinder;
 import Modules.DirectionFinderListener;
 import Modules.Route;
+import ir.ac.bonabu.khoonehbedoosh.Server_Connection.GPSTracker;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
 
@@ -97,6 +98,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng hcmus = new LatLng(35.692333, 51.393076);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 12));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setCompassEnabled(true);
+        Button btnShowLocation = (Button) findViewById(R.id.btnmylocation);
+
+        // show location button click event
+        btnShowLocation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // create class object
+                GPSTracker gps = new GPSTracker(MapsActivity.this);
+
+                // check if GPS enabled     
+                if(gps.canGetLocation()){
+
+                    double latitude = gps.getLatitude();
+                    double longitude = gps.getLongitude();
+
+                    // \n is for new line
+                    LatLng location= new LatLng(latitude, longitude);
+                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                }else{
+                    // can't get location
+                    // GPS or Network is not enabled
+                    // Ask user to enable GPS/network in settings
+                    gps.showSettingsAlert();
+                }
+
+            }
+        });
+
 //        originMarkers.add(mMap.addMarker(new MarkerOptions()
 //                .title("Đại học Khoa học tự nhiên")
 //                .position(hcmus)));
