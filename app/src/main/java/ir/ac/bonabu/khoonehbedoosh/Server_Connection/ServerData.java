@@ -262,8 +262,6 @@ public class ServerData {
         HashMapParams.put("d[elevator]", location.getElevator());
         HashMapParams.put("d[refrigriat]", location.getRefrigriat());
         HashMapParams.put("d[user_id]", location.getUser_id());
-        Log.e("server", signIn.getUsername());
-        Log.e("server", signIn.getPassword());
         HashMapParams.put("action", "2");
         return HashMapParams;
     }

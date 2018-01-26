@@ -48,7 +48,7 @@ public class User {
             return city;
         }
 
-        public signUp(String name, String lastname, String username, String email, String password, String phone, String nacode) {
+        public signUp(String name, String lastname, String username, String email, String password, String phone) {
             this.name = name;
             this.lastname = lastname;
             this.username = username;

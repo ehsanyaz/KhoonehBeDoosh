@@ -90,7 +90,7 @@ public class Splash extends Activity {
         findViewById(R.id.sigup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User.signUp user = new User.signUp(signup_n.getText().toString(), signup_ln.getText().toString(), signup_u.getText().toString(), signup_e.getText().toString(), signup_p.getText().toString(), signup_ph.getText().toString(), signup_nc.getText().toString());
+                User.signUp user = new User.signUp(signup_n.getText().toString(), signup_ln.getText().toString(), signup_u.getText().toString(), signup_e.getText().toString(), signup_p.getText().toString(), signup_ph.getText().toString());
                 ServerData sendUser = new ServerData(Splash.this, user,SIGN_UP);
                 sendUser.upload();
             }
