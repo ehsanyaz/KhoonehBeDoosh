@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class OwenerActivity extends Activity {
 
@@ -31,7 +32,7 @@ public class OwenerActivity extends Activity {
         MyPlaces.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
             }
         });
     }
