@@ -1,3 +1,3 @@
 # KhoonehBeDoosh
-Sharif Maraton
-An Android App
+Sharif Maraton.
+An Android App.
